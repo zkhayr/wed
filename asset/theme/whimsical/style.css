@@ -1126,7 +1126,7 @@ hr {
 .appbar .appbar-nav {
     position: relative;
     z-index: 999999;
-    background: #935CC6;
+    background: #D4AF37;
     max-height: 80px;
     padding: 1.25em 0.5em 0.75em 0.5em;
     border-radius: 20px 20px 0px 0px;
@@ -1165,9 +1165,9 @@ hr {
 .appbar .appbar-nav ul li:nth-child(3) i {
     display: inline-block;
     font-size: 24px;
-    color: #935CC6;
+    color: #D4AF37;
     background: #FFFFFF;
-    border: 2px solid #935CC6;
+    border: 2px solid #D4AF37;
     border-radius: 50%;
     padding: 12px;
 }
@@ -1189,19 +1189,19 @@ hr {
 }
 
 .appbar .appbar-modal .modal-dialog .modal-header {
-    background-color: #935CC6;
+    background-color: #D4AF37;
     color: #FFFFFF;
-    border: 1px solid #935CC6;
+    border: 1px solid #D4AF37;
 }
 
 .appbar .appbar-modal .modal-dialog .modal-body {
-    color: #947439;
+    color: #D4AF37;
     background-color: #FFFFFF;
-    border: 1px solid #935CC6;
+    border: 1px solid #D4AF37;
 }
 
 .appbar .appbar-modal .modal-dialog .modal-body label {
-    color: #947439;
+    color: #D4AF37;
 }
 
 .appbar .appbar-modal .modal-dialog .modal-body .btn-main {}
