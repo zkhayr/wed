@@ -107,7 +107,7 @@
 
 .jsCalendar thead .jsCalendar-nav-left:hover,
 .jsCalendar thead .jsCalendar-nav-right:hover {
-    background-color: #935CC6;
+    background-color: #D4AF37;
 }
 
 .jsCalendar thead .jsCalendar-title {
@@ -361,8 +361,8 @@ hr {
 }
 
 .card-qr .title {
-    background-color: #935CC6;
-    border: 1px solid #935CC6;
+    background-color: #D4AF37;
+    border: 1px solid #D4AF37;
     font-size: 22px;
     color: #FFFFFF;
     padding: 1em;
