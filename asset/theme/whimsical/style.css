@@ -3,21 +3,7 @@
 ============================================*/
 @keyframes onplay {
     0% {
-        background-color: #D4AF37;
-        color: #FFFFFF;
-        border: 1px solid #FFFFFF;
-    }
-
-    100% {
-        background-color: #FFFFFF;
-        color: #D4AF37;
-        border: 1px solid #D4AF37;
-    }
-}
-
-@-webkit-keyframe onplay {
-    0% {
-        background-color: #D4AF37;
+        background-color: #947439;
         color: #FFFFFF;
         border: 1px solid #FFFFFF;
     }
@@ -25,7 +11,21 @@
     100% {
         background-color: #FFFFFF;
         color: #947439;
-        border: 1px solid #D4AF37;
+        border: 1px solid #947439;
+    }
+}
+
+@-webkit-keyframe onplay {
+    0% {
+        background-color: #947439;
+        color: #FFFFFF;
+        border: 1px solid #FFFFFF;
+    }
+
+    100% {
+        background-color: #FFFFFF;
+        color: #947439;
+        border: 1px solid #947439;
     }
 }
 
@@ -57,11 +57,11 @@
 }
 
 .js-preloader .preloader-inner .dot {
-    background: #D4AF37;
+    background: #947439;
 }
 
 .js-preloader .preloader-inner .dots span {
-    background: #935CC6;
+    background: #947439;
 }
 
 /*============================================
@@ -107,7 +107,7 @@
 
 .jsCalendar thead .jsCalendar-nav-left:hover,
 .jsCalendar thead .jsCalendar-nav-right:hover {
-    background-color: #D4AF37;
+    background-color: #947439;
 }
 
 .jsCalendar thead .jsCalendar-title {
@@ -130,7 +130,7 @@
 }
 
 .jsCalendar table tbody td.jsCalendar-current {
-    background-color: #D4AF37;
+    background-color: #947439;
     border-radius: 8px;
     color: #FFFFFF;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
@@ -206,7 +206,7 @@
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #D4AF37;
+    background: #947439;
 }
 
 html {
@@ -250,15 +250,15 @@ hr {
 }
 
 .btn-main {
-    background-color: #D4AF37;
-    border: 1px solid #D4AF37;
+    background-color: #947439;
+    border: 1px solid #947439;
     color: #FFFFFF;
 }
 
 .btn-main:hover {
     background-color: #FFFFFF;
-    border: 1px solid #D4AF37;
-    color: #D4AF37 !important;
+    border: 1px solid #947439;
+    color: #947439 !important;
 }
 
 .text-sm {
@@ -361,8 +361,8 @@ hr {
 }
 
 .card-qr .title {
-    background-color: #D4AF37;
-    border: 1px solid #D4AF37;
+    background-color: #947439;
+    border: 1px solid #947439;
     font-size: 22px;
     color: #FFFFFF;
     padding: 1em;
@@ -471,9 +471,9 @@ hr {
 
 .input-counter button:nth-child(1),
 .input-counter button:nth-child(3) {
-    background: #D4AF37;
+    background: #947439;
     color: #FFFFFF;
-    border: 1px solid #D4AF37;
+    border: 1px solid #947439;
     border-radius: 4px;
     margin: 0em 0.25em;
 }
@@ -962,7 +962,7 @@ hr {
     max-width: 250px;
     font-size: 14px;
     padding: 0.75em 1em;
-    box-shadow: 0px 2px 4px 1px #935CC6;
+    box-shadow: 0px 2px 4px 1px #947439;
 }
 
 .sub-page {
@@ -1096,7 +1096,7 @@ hr {
 }
 
 .sub-page .container.container-countdown {
-    background-color: #935CC6;
+    background-color: #947439;
     margin-bottom: 2em;
     padding: 2em 1.5em;
 }
@@ -1106,7 +1106,7 @@ hr {
 }
 
 .sub-page .container.container-footer {
-    background-color: #935CC6;
+    background-color: #947439;
     color: #FFFFFF;
 }
 
@@ -1126,7 +1126,7 @@ hr {
 .appbar .appbar-nav {
     position: relative;
     z-index: 999999;
-    background: #D4AF37;
+    background: #947439;
     max-height: 80px;
     padding: 1.25em 0.5em 0.75em 0.5em;
     border-radius: 20px 20px 0px 0px;
@@ -1165,9 +1165,9 @@ hr {
 .appbar .appbar-nav ul li:nth-child(3) i {
     display: inline-block;
     font-size: 24px;
-    color: #D4AF37;
+    color: #947439;
     background: #FFFFFF;
-    border: 2px solid #D4AF37;
+    border: 2px solid #947439;
     border-radius: 50%;
     padding: 12px;
 }
@@ -1189,19 +1189,19 @@ hr {
 }
 
 .appbar .appbar-modal .modal-dialog .modal-header {
-    background-color: #D4AF37;
+    background-color: #947439;
     color: #FFFFFF;
-    border: 1px solid #D4AF37;
+    border: 1px solid #947439;
 }
 
 .appbar .appbar-modal .modal-dialog .modal-body {
-    color: #D4AF37;
+    color: #947439;
     background-color: #FFFFFF;
-    border: 1px solid #D4AF37;
+    border: 1px solid #947439;
 }
 
 .appbar .appbar-modal .modal-dialog .modal-body label {
-    color: #D4AF37;
+    color: #947439;
 }
 
 .appbar .appbar-modal .modal-dialog .modal-body .btn-main {}
@@ -1229,7 +1229,7 @@ hr {
 .floating-bar .floating-music {
     position: fixed;
     bottom: 100px;
-    background: #D4AF37;
+    background: #947439;
     font-size: 20px;
     color: #FFFFFF;
     border: 1px solid #FFFFFF;
