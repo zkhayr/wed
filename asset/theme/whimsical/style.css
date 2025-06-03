@@ -1,0 +1,1279 @@
+/*============================================
+==> Animation CSS
+============================================*/
+@keyframes onplay {
+    0% {
+        background-color: #935CC6;
+        color: #FFFFFF;
+        border: 1px solid #FFFFFF;
+    }
+
+    100% {
+        background-color: #FFFFFF;
+        color: #947439;
+        border: 1px solid #935CC6;
+    }
+}
+
+@-webkit-keyframe onplay {
+    0% {
+        background-color: #935CC6;
+        color: #FFFFFF;
+        border: 1px solid #FFFFFF;
+    }
+
+    100% {
+        background-color: #FFFFFF;
+        color: #947439;
+        border: 1px solid #935CC6;
+    }
+}
+
+@keyframes swing1 {
+    0% {
+        transform: rotate(-3deg);
+    }
+
+    100% {
+        transform: rotate(3deg);
+    }
+}
+
+@-webkit-keyframe swing1 {
+    0% {
+        transform: rotate(-3deg);
+    }
+
+    100% {
+        transform: rotate(3deg);
+    }
+}
+
+/*============================================
+==> Preloader CSS
+============================================*/
+.js-preloader {
+    z-index: 9999999;
+}
+
+.js-preloader .preloader-inner .dot {
+    background: #947439;
+}
+
+.js-preloader .preloader-inner .dots span {
+    background: #935CC6;
+}
+
+/*============================================
+==> jsCalendar CSS
+============================================*/
+.jsCalendar table {
+    font-family: Korbin;
+    font-weight: 600;
+    width: 100%;
+    margin: 0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.jsCalendar table thead .jsCalendar-week-days th,
+.jsCalendar table tbody td {
+    font-size: 15px !important;
+}
+
+.jsCalendar table thead {
+    padding: 10px 4px;
+    margin: 0px;
+    border-radius: 0px 0px 20px 20px
+}
+
+.jsCalendar table thead tr {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.jsCalendar table thead .jsCalendar-title {
+    width: 100%;
+}
+
+.jsCalendar table thead .jsCalendar-nav-left,
+.jsCalendar table thead .jsCalendar-nav-right {
+    font-size: 22px;
+    height: auto;
+    width: auto;
+    padding: 10px;
+}
+
+.jsCalendar thead .jsCalendar-nav-left:hover,
+.jsCalendar thead .jsCalendar-nav-right:hover {
+    background-color: #935CC6;
+}
+
+.jsCalendar thead .jsCalendar-title {
+    height: auto;
+}
+
+.jsCalendar thead .jsCalendar-title-name {
+    padding: 10px 20px;
+}
+
+.jsCalendartable tbody tbody {
+    padding: 15px 0px;
+    margin: 0;
+}
+
+.jsCalendar table tbody tr {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.jsCalendar table tbody td.jsCalendar-current {
+    background-color: #935CC6;
+    border-radius: 8px;
+    color: #FFFFFF;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+
+/*============================================
+==> Sweetalert CSS
+============================================*/
+
+.swal2-container {
+    z-index: 99999999 !important;
+}
+
+/*============================================
+==> Flipdown CSS
+============================================*/
+.flipdown {
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    zoom: 0.6;
+}
+
+/* [data-aos] {
+    transform-style: preserve-3d;
+} */
+
+/*============================================
+==> Font CSS
+============================================*/
+@font-face {
+    font-family: Korbin;
+    src: url("../../../assets/fonts/Korbin/Korbin\ W01\ Book.ttf");
+}
+
+@font-face {
+    font-family: Cynthia;
+    src: url("../../../assets/fonts/Cynthia/CynthiaJuneJF.ttf");
+}
+
+@font-face {
+    font-family: Meritta;
+    src: url("../../../assets/fonts/Meritta/MerittaSerif.ttf");
+}
+
+@font-face {
+    font-family: Caveat;
+    src: url("../../../assets/fonts/Caveat/Caveat-Bold.ttf");
+}
+
+@font-face {
+    font-family: SpaceMono;
+    src: url("../../../assets/fonts/SpaceMono/SpaceMono-Regular.ttf");
+}
+
+/*============================================
+==> General CSS
+============================================*/
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #FFFFFF;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #947439;
+}
+
+html {
+    overflow-x: hidden;
+    overflow-y: overlay;
+    scroll-behavior: unset !important;
+}
+
+body {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: overlay;
+    max-width: 480px;
+    width: 100%;
+    margin: auto;
+    font-family: Korbin;
+    letter-spacing: 1px;
+    color: #947439;
+    background-image: url("bg2.webp");
+    background-size: cover;
+    background-position: center;
+
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+p {
+    color: #4d6155;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+label {
+    color: #947439;
+    font-weight: 600;
+    margin-bottom: 0.1em;
+}
+
+hr {
+    height: 1.5px;
+    background: #947439;
+}
+
+.btn-main {
+    background-color: #935CC6;
+    border: 1px solid #935CC6;
+    color: #FFFFFF;
+}
+
+.btn-main:hover {
+    background-color: #FFFFFF;
+    border: 1px solid #935CC6;
+    color: #935CC6 !important;
+}
+
+.text-sm {
+    font-size: 12px;
+}
+
+.text-main {
+    color: #4d6155;
+}
+
+.text-parent {
+    color: #947439;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 0px;
+}
+
+.text-bride {
+    font-family: Meritta;
+    font-size: 24px;
+    font-weight: 400 !important;
+    letter-spacing: 1px;
+    color: #947439 !important;
+    margin-bottom: 0px;
+    text-shadow: 0px 0px 1px #947439;
+}
+
+.text-bride span {
+    display: inline-block;
+    padding-left: 5px;
+}
+
+.text-bride span::first-letter {
+    font-size: 32px !important;
+}
+
+.text-hashtag {
+    color: #947439 !important;
+    margin: 1em 0em;
+    text-shadow: 0 1px 1px #947439;
+}
+
+.form-group {
+    margin-bottom: 1em;
+}
+
+.form-control {
+    border: 1px solid #947439;
+}
+
+.img-logo {
+    max-width: 180px;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+    margin: 1em;
+}
+
+.social-media li {
+    margin: 0px
+}
+
+.social-media a {
+    display: inline-flex;
+    background: #947439;
+    color: #FFFFFF;
+    padding: 0.75em 0.8em;
+    margin: 0em 0.25em;
+    border-radius: 4px;
+}
+
+.table-program {
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+.table-program tr td:nth-child(1) {
+    font-family: SpaceMono;
+    font-weight: 800;
+    color: #947439;
+    white-space: nowrap;
+}
+
+.table-program tr td:nth-child(2) {
+    text-align: left;
+    color: #4d6155;
+    font-weight: 600;
+    padding-left: 1em;
+    padding: 0.25em 0em 0.25em 1em;
+}
+
+.card-qr {
+    background-color: #FFFFFF;
+    border: 1px solid #947439;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.card-qr .title {
+    background-color: #935CC6;
+    border: 1px solid #935CC6;
+    font-size: 22px;
+    color: #FFFFFF;
+    padding: 1em;
+}
+
+.card-qr .content {
+    padding: 1em;
+}
+
+.card-qr .image-qr {
+    margin-right: 1.5em;
+}
+
+.card-qr .btn-download {
+    font-size: 26px;
+    padding: 0.5em 0.75em;
+}
+
+.card-qr .btn-download:hover {}
+
+.card-qr .btn-copy {
+    font-size: 22px;
+    padding: 0.5em 0.75em;
+}
+
+.card-qr .btn-copy:hover {}
+
+.card-qr label {
+    color: #4d6155;
+    font-weight: 600;
+}
+
+.card-qr p {
+    color: #947439;
+    margin-bottom: 0px;
+}
+
+.card-prayer {
+    border: 1px solid #947439;
+    padding: 1em;
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+.card-prayer p {
+    white-space: pre-line;
+    margin-bottom: 0px;
+}
+
+.card-divider {
+    display: block;
+    border: 1px solid #947439;
+    margin: 2em 0em;
+}
+
+.list-contact {
+    padding: 0em 0.25em;
+}
+
+.list-contact li {
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    padding: 0.5em 0em;
+}
+
+.list-contact li label {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: #FFFFFF;
+    font-size: 16px;
+}
+
+.list-contact li label i {
+    font-size: 24px;
+}
+
+.list-contact li a {
+    background: #947439;
+    color: #FFFFFF;
+    border: 1px solid #947439;
+    border-radius: 50%;
+    padding: 0.3em 0.5em;
+    margin-left: 0.5em;
+}
+
+.list-contact li a span.fa-phone {
+    font-size: 18px;
+    padding-top: 2px;
+}
+
+.list-contact li a span.fa-whatsapp {
+    font-size: 20px;
+    /* color: #2AB318; */
+}
+
+.input-counter {
+    display: flex;
+    margin: 0.5em 0em;
+}
+
+.input-counter input {
+    text-align: center;
+}
+
+.input-counter button:nth-child(1),
+.input-counter button:nth-child(3) {
+    background: #935CC6;
+    color: #FFFFFF;
+    border: 1px solid #935CC6;
+    border-radius: 4px;
+    margin: 0em 0.25em;
+}
+
+.slider-gallery-main {
+    width: 100%;
+}
+
+.slider-gallery-main .image {
+    height: 275px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 6px;
+    box-shadow: #947439 0px 1px 5px 0px;
+}
+
+.slider-gallery-main .owl-stage-outer {
+    overflow: unset !important;
+}
+
+.slider-gallery-sub {
+    width: 100%;
+}
+
+.slider-gallery-sub .image {
+    height: 100px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+    margin-top: 10px;
+    transition: 0.5s;
+}
+
+.slider-gallery-sub .center .image {
+    margin-top: 0px;
+    transition: 0.5s;
+}
+
+.slider-gallery-sub .center .image:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: #947439 0px 1px 5px 0px;
+}
+
+.slider-gallery-sub .owl-stage-outer {
+    overflow: unset !important;
+}
+
+.slider-guestbook .owl-dot {
+    background-color: #4d6155 !important;
+    height: 10px;
+    width: 10px;
+    margin: 0px 5px;
+    border-radius: 4px;
+    opacity: 0.75;
+}
+
+.slider-guestbook .owl-dot.active {
+    background-color: #947439 !important;
+}
+
+.slider-guestbook .text {
+    font-family: Caveat;
+    font-size: 20px;
+}
+
+/*============================================
+==> Section CSS
+============================================*/
+
+.main-page {
+    position: fixed;
+    left: 50%;
+    top: 0px;
+    z-index: 99999;
+    max-width: 480px;
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF;
+    color: #4d6155;
+    text-align: center;
+    overflow: hidden;
+    transform: translateX(-50%);
+}
+
+.main-page .main-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(bg1.webp);
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.main-page .main-particles {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+.main-page .main-animation {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.main-page .main-bg-1,
+.main-page .main-bg-2,
+.main-page .main-top-1,
+.main-page .main-top-2,
+.main-page .main-top-3,
+.main-page .main-top-4,
+.main-page .main-top-5,
+.main-page .main-bottom-1,
+.main-page .main-bottom-2,
+.main-page .main-bottom-3,
+.main-page .main-bottom-4,
+.main-page .main-bottom-5,
+.main-page .main-left-1,
+.main-page .main-left-2,
+.main-page .main-left-3,
+.main-page .main-main {
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+}
+
+.main-page .main-left-1 .el {
+    position: absolute;
+    bottom: -26%;
+    left: -58%;
+    width: 75%;
+    height: 70%;
+    background-image: url(bg1-1.webp);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform-origin: bottom center;
+}
+
+.main-page .main-left-1 .el span {
+    position: relative;
+    left: 34%;
+    bottom: -42%;
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1;
+    transform: rotate(90deg);
+    transform-origin: center;
+}
+
+.main-page .main-left-2 .el {
+    position: absolute;
+    bottom: -11%;
+    left: -11%;
+    width: 35%;
+    height: 50%;
+    background-image: url(el7.webp);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform-origin: left center;
+    animation: 2.0s swing1 ease-in-out 0.0s infinite alternate;
+    -webkit-animation: 2.0s swing1 ease-in-out 0.0s infinite alternate;
+}
+
+.main-page .main-left-3 .el {
+    position: absolute;
+    bottom: 4%;
+    left: -25%;
+    width: 45%;
+    height: 50%;
+    background-image: url(el6.webp);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform-origin: left center;
+    animation: 2.0s swing1 ease-in-out 0.0s infinite alternate;
+    -webkit-animation: 2.0s swing1 ease-in-out 0.0s infinite alternate;
+}
+
+.main-page .main-top-1 .el {
+    position: absolute;
+    top: 2%;
+    left: 48%;
+    width: 50%;
+    height: 50%;
+    background-image: url(el1.webp);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform-origin: bottom center;
+    animation: 2.0s swing1 ease-in-out 0.0s infinite alternate;
+    -webkit-animation: 2.0s swing1 ease-in-out 0.0s infinite alternate;
+}
+
+.main-page .main-top-2 .el {
+    position: absolute;
+    top: 7%;
+    left: 2%;
+    width: 45%;
+    height: 50%;
+    background-image: url(el2.webp);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform-origin: bottom center;
+    animation: 2.0s swing1 ease-in-out 0.5s infinite alternate;
+    -webkit-animation: 2.0s swing1 ease-in-out 0.5s infinite alternate;
+}
+
+.main-page .main-top-3 .el {
+    position: absolute;
+    top: 3%;
+    left: 19%;
+    width: 45%;
+    height: 50%;
+    background-image: url(el2.webp);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform-origin: bottom center;
+    opacity: 0.75;
+    animation: 2.0s swing1 ease-in-out 0.0s infinite alternate;
+    -webkit-animation: 2.0s swing1 ease-in-out 0.0s infinite alternate;
+}
+
+.main-page .main-top-4 .el {
+    position: absolute;
+    top: 25%;
+    right: -4%;
+    width: 45%;
+    height: 25%;
+    background-image: url(el3.webp);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform-origin: left center;
+    animation: 2.0s swing1 ease-in-out 0.5s infinite alternate;
+    -webkit-animation: 2.0s swing1 ease-in-out 0.5s infinite alternate;
+}
+
+.main-page .main-top-5 .el {
+    position: absolute;
+    top: 29%;
+    right: -4%;
+    width: 45%;
+    height: 25%;
+    background-image: url(el4.webp);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform-origin: left center;
+    animation: 2.0s swing1 ease-in-out 0.0s infinite alternate;
+    -webkit-animation: 2.0s swing1 ease-in-out 0.0s infinite alternate;
+}
+
+.main-page .main-bottom-1 .el {
+    position: absolute;
+    bottom: -31%;
+    left: 37%;
+    width: 70%;
+    height: 50%;
+    background-image: url(el1.webp);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform-origin: bottom center;
+    animation: 2.0s swing1 ease-in-out 0.0s infinite alternate;
+    -webkit-animation: 2.0s swing1 ease-in-out 0.0s infinite alternate;
+}
+
+.main-page .main-bottom-2 .el {
+    position: absolute;
+    bottom: -26%;
+    left: -9%;
+    width: 40%;
+    height: 50%;
+    background-image: url(el2.webp);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform-origin: bottom center;
+    animation: 2.0s swing1 ease-in-out 0.5s infinite alternate;
+    -webkit-animation: 2.0s swing1 ease-in-out 0.5s infinite alternate;
+}
+
+.main-page .main-bottom-3 .el {
+    position: absolute;
+    bottom: -24%;
+    left: 7%;
+    width: 40%;
+    height: 50%;
+    background-image: url(el2.webp);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform-origin: bottom center;
+    opacity: 0.75;
+    animation: 2.0s swing1 ease-in-out 0.25s infinite alternate;
+    -webkit-animation: 2.0s swing1 ease-in-out 0.25s infinite alternate;
+}
+
+.main-page .main-bottom-4 .el {
+    position: absolute;
+    bottom: -32%;
+    left: 18%;
+    width: 65%;
+    height: 55%;
+    background-image: url(el5.webp);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform-origin: bottom center;
+    animation: 2.0s swing1 ease-in-out 0.0s infinite alternate;
+    -webkit-animation: 2.0s swing1 ease-in-out 0.0s infinite alternate;
+}
+
+.main-page .main-bottom-5 .el {
+    position: absolute;
+    bottom: -17%;
+    left: 73%;
+    width: 40%;
+    height: 30%;
+    background-image: url(el2.webp);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform-origin: bottom center;
+    animation: 2.0s swing1 ease-in-out 0.5s infinite alternate-reverse;
+    -webkit-animation: 2.0s swing1 ease-in-out 0.5s infinite alternate-reverse;
+}
+
+.main-page .container-content {
+    position: relative;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.main-page .container-content .content {
+    max-width: 375px;
+    min-height: 80%;
+    width: 100%;
+    padding: 9em 2em 5em 2em;
+    background-image: url(bg1-1.webp);
+    background-position: top left;
+    background-size: 99% 124%;
+    background-repeat: no-repeat;
+}
+
+.main-page .container-content .content .title {
+    position: relative;
+    z-index: 999;
+    width: 100%;
+    font-family: Korbin;
+    color: #947439;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+    padding: 1em 0em 1em 0em;
+}
+
+.main-page .container-content .content .title span {
+    display: inline-block;
+}
+
+.main-page .container-content .content .title .text-1 {
+    position: relative;
+    left: -0px;
+    font-size: 18px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.main-page .container-content .content .title .text-1::first-letter {
+    position: relative;
+    font-family: Cynthia;
+    font-weight: 400;
+    font-size: 84px !important;
+    margin-right: -5px;
+}
+
+.main-page .container-content .content .title .text-2 {
+    position: relative;
+    right: -55px;
+    font-family: Meritta;
+    font-size: 58px;
+    font-weight: 300;
+    line-height: 0.5;
+}
+
+.main-page .container-content .content .title .text-3 {
+    position: relative;
+    left: -0px;
+    font-size: 18px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    line-height: 0.5;
+}
+
+.main-page .container-content .content .title .text-3::first-letter {
+    font-family: Cynthia;
+    font-weight: 400;
+    font-size: 84px !important;
+    margin-right: -5px;
+}
+
+.main-page .container-content .content .event {
+    font-weight: 600;
+    padding-bottom: 1em;
+}
+
+.main-page .container-content .content .date {
+    margin-top: 2em;
+}
+
+.main-page .container-content .content .date h2 {
+    width: fit-content;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1;
+    margin: 0.25em auto;
+    padding: 0em;
+}
+
+.main-page .container-content .content .date h4 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1;
+    margin: 1em;
+    padding: 0em;
+}
+
+.main-page .container-content .content .date h4 span:last-child {
+    letter-spacing: 0px;
+}
+
+.main-page .container-content .content .date h6 {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+    margin: 0em;
+    padding: 0.25em;
+}
+
+.main-page .container-content .content .location {
+    width: 100%;
+    margin: 2em auto 0em auto;
+}
+
+.main-page .container-content .content .location h4 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1;
+    margin: 0em;
+    padding: 0em 2em;
+}
+
+.main-page .container-content .content .open {
+    margin-top: 2em;
+}
+
+.main-page .container-content .content .open .btn-open {
+    width: 100%;
+    max-width: 250px;
+    font-size: 14px;
+    padding: 0.75em 1em;
+    box-shadow: 0px 2px 4px 1px #935CC6;
+}
+
+.sub-page {
+    color: #947439;
+    text-align: center;
+    padding: 3em 0em 4em 0em;
+}
+
+.sub-page .sub-animation {
+    position: fixed;
+    left: 50%;
+    top: 0;
+    max-width: 480px;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    transform: translateX(-50%);
+    opacity: 0.75;
+}
+
+.sub-page .sub-particles {
+    position: fixed;
+    left: 50%;
+    top: 0;
+    max-width: 480px;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    transform: translateX(-50%);
+}
+
+.sub-page .sub-left-1,
+.sub-page .sub-left-2,
+.sub-page .sub-right-1,
+.sub-page .sub-right-2,
+.sub-page .sub-right-3,
+.sub-page .sub-sub {
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+}
+
+.sub-page .sub-right-3 .el {
+    position: absolute;
+    bottom: -1%;
+    right: -70%;
+    width: 105%;
+    height: 80%;
+    background-image: url(el8.webp);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform-origin: right bottom;
+    opacity: 0.5;
+    animation: 2.0s swing1 ease-in-out 0.5s infinite alternate;
+    -webkit-animation: 2.0s swing1 ease-in-out 0.5s infinite alternate;
+}
+
+.sub-page .sub-right-2 .el {
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    width: 50%;
+    height: 50%;
+    background-image: url(el9.webp);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform-origin: right center;
+    animation: 2.0s swing1 ease-in-out 0.25s infinite alternate;
+    -webkit-animation: 2.0s swing1 ease-in-out 0.25s infinite alternate;
+}
+
+.sub-page .sub-right-1 .el {
+    position: absolute;
+    bottom: -16%;
+    right: -14%;
+    width: 50%;
+    height: 50%;
+    background-image: url(el2.webp);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform-origin: right bottom;
+    animation: 2.0s swing1 ease-in-out 0.5s infinite alternate;
+    -webkit-animation: 2.0s swing1 ease-in-out 0.5s infinite alternate;
+}
+
+.sub-page .sub-left-1 .el {
+    position: absolute;
+    top: -23%;
+    left: -30%;
+    width: 70%;
+    height: 50%;
+    background-image: url(el1.webp);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform-origin: left top;
+    animation: 2.0s swing1 ease-in-out 0.5s infinite alternate;
+    -webkit-animation: 2.0s swing1 ease-in-out 0.5s infinite alternate;
+}
+
+.sub-page .sub-left-2 .el {
+    position: absolute;
+    top: -28%;
+    left: -62%;
+    width: 115%;
+    height: 70%;
+    background-image: url(el1.webp);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform-origin: left top;
+    opacity: 0.5;
+    animation: 2.0s swing1 ease-in-out 0.0s infinite alternate;
+    -webkit-animation: 2.0s swing1 ease-in-out 0.0s infinite alternate;
+}
+
+.sub-page .container {
+    position: relative;
+    z-index: 1;
+    padding: 1em 1.5em;
+}
+
+.sub-page .container h4 {
+    color: #947439;
+    font-weight: 600;
+}
+
+.sub-page .container.container-countdown {
+    background-color: #935CC6;
+    margin-bottom: 2em;
+    padding: 2em 1.5em;
+}
+
+.sub-page .container.container-countdown h4 {
+    color: #FFFFFF;
+}
+
+.sub-page .container.container-footer {
+    background-color: #935CC6;
+    color: #FFFFFF;
+}
+
+.sub-page .container.container-footer p {
+    color: #FFFFFF;
+    font-weight: 500;
+}
+
+.appbar {
+    position: fixed;
+    bottom: 0px;
+    max-width: 480px;
+    width: 100%;
+    z-index: 999999;
+}
+
+.appbar .appbar-nav {
+    position: relative;
+    z-index: 999999;
+    background: #935CC6;
+    max-height: 80px;
+    padding: 1.25em 0.5em 0.75em 0.5em;
+    border-radius: 20px 20px 0px 0px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 20px 0px;
+}
+
+.appbar .appbar-nav ul {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+.appbar .appbar-nav ul li {
+    color: #FFFFFF;
+    text-align: center;
+    width: 25%;
+}
+
+.appbar .appbar-nav ul li i {
+    display: block;
+    font-size: 20px;
+}
+
+.appbar .appbar-nav ul li span {
+    display: block;
+    margin-top: 0.25em;
+}
+
+.appbar .appbar-nav ul li:nth-child(3) {
+    position: relative;
+    top: -32px;
+}
+
+.appbar .appbar-nav ul li:nth-child(3) i {
+    display: inline-block;
+    font-size: 24px;
+    color: #935CC6;
+    background: #FFFFFF;
+    border: 2px solid #935CC6;
+    border-radius: 50%;
+    padding: 12px;
+}
+
+.appbar .appbar-modal {
+    display: block;
+    position: absolute;
+    bottom: 90px;
+    width: 100%;
+    padding: 0em 0.5em;
+}
+
+.appbar .appbar-modal .modal-dialog {
+    margin: 0em;
+}
+
+.appbar .appbar-modal .modal-dialog .modal-content {
+    width: 100%;
+}
+
+.appbar .appbar-modal .modal-dialog .modal-header {
+    background-color: #935CC6;
+    color: #FFFFFF;
+    border: 1px solid #935CC6;
+}
+
+.appbar .appbar-modal .modal-dialog .modal-body {
+    color: #947439;
+    background-color: #FFFFFF;
+    border: 1px solid #935CC6;
+}
+
+.appbar .appbar-modal .modal-dialog .modal-body label {
+    color: #947439;
+}
+
+.appbar .appbar-modal .modal-dialog .modal-body .btn-main {}
+
+.appbar .appbar-modal .modal-dialog .modal-body .btn-main:hover {}
+
+.modal-backdrop {
+    position: absolute;
+    opacity: 0.75;
+    max-width: 480px;
+    width: 100%;
+    height: 100%;
+}
+
+.floating-bar {
+    position: relative;
+    z-index: 99999;
+}
+
+.floating-bar .floating-icon {
+    position: absolute;
+    right: 72px;
+}
+
+.floating-bar .floating-music {
+    position: fixed;
+    bottom: 100px;
+    background: #935CC6;
+    font-size: 20px;
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    border-radius: 50%;
+    padding: 0.75em 1em;
+}
+
+.floating-bar .floating-music.active {
+    animation: onplay ease-in-out 3s infinite alternate;
+    -webkit-animation: onplay ease-in-out 3s infinite alternate;
+}
+
+
+/*============================================
+==> Responsive CSS
+============================================*/
+
+@media(max-height: 620px) {
+    .main-page .main-container {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .main-page .container-content {
+        height: auto;
+    }
+
+    .appbar .appbar-nav {
+        max-height: 72px;
+    }
+
+    .appbar .appbar-nav ul li span {
+        font-size: 12px;
+    }
+}
+
+@media(max-width: 550px) {
+    .flipdown {
+        zoom: 1;
+    }
+}
+
+@media(max-width: 380px) {
+    .flipdown {
+        zoom: 0.8;
+    }
+}
