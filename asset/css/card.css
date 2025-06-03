@@ -1,0 +1,188 @@
+/*******************************************
+==> PleaseRotate CSS
+********************************************/
+
+@keyframes pleaserotateframes {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(90deg);
+    }
+}
+
+@media(min-height: 480px) {
+    #pleaserotate-backdrop {
+        display: none !important;
+    }
+}
+
+/*******************************************
+==> Owl Carousel CSS
+********************************************/
+.owl-dots {
+    display: block !important;
+}
+
+.owl-carousel .owl-stage {
+    display: flex;
+    align-items: center;
+}
+
+/*******************************************
+==> AutoJS Calendar
+********************************************/
+@media(max-width: 340px) {
+    .auto-jsCalendar {
+        zoom: 0.9;
+    }
+}
+
+/*******************************************
+==> Bootstrap CSS
+********************************************/
+@media(max-width: 340px) {
+    [data-modal="location"] .row {
+        --bs-gutter-y: 0.5rem;
+    }
+
+    .col-6 {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .row .col-6 .btn i {
+        display: inline;
+    }
+}
+
+.modal-body {
+    max-height: 65vh;
+    overflow: auto;
+}
+
+.main-video {
+    z-index: 9999999;
+    position: fixed;
+    left: 50%;
+    top: 0px;
+    z-index: 99999;
+    max-width: 480px;
+    width: 100%;
+    height: 100%;
+    background: #010001;
+    text-align: center;
+    overflow: hidden;
+    transform: translateX(-50%);
+}
+
+.main-video .btn-play {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    border-radius: 50%;
+    padding: 2em 3em;
+    transform: translateX(-50%);
+}
+
+.main-video .btn-play i {
+    display: block;
+    font-size: 120px;
+    padding: 0.1em 0.1em 0.2em 0.1em;
+}
+
+.main-video .btn-skip {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+}
+
+/*******************************************
+==> Replacement CSS
+********************************************/
+
+.social-media {
+    display: flex !important;
+    justify-content: center !important;
+    padding: 1em !important;
+    margin: 1em !important;
+}
+
+.social-media li a {
+    border: 2px solid #C69665;
+}
+
+.main-page .container-content::-webkit-scrollbar {
+    width: 0px;
+}
+
+.slider-guestbook .text {
+    word-break: break-word;
+}
+
+/*******************************************
+==> General CSS
+********************************************/
+
+.main-page .container-content {
+    overscroll-behavior: none;
+}
+
+.img-logo {
+    max-width: 100% !important;
+    width: 180px !important;
+    cursor: pointer;
+}
+
+.image-intro {
+    width: 160px;
+    max-width: 100%;
+    margin-bottom: 1em;
+}
+
+.iframe-container iframe {
+    width: 100%;
+    height: 275px;
+    margin-bottom: 0.5em;
+}
+
+.floating-preview {
+    position: fixed;
+    top: 0px;
+    left: 50%;
+    width: 100%;
+    max-width: 480px;
+    z-index: 9999999999;
+    padding: 1em;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+@-webkit-keyframes previewBtn {
+    0% {
+        opacity: 1;
+        box-shadow: 0px 0px 10px 2px #146c43;
+    }
+
+    100% {
+        opacity: 0.7;
+        box-shadow: 0px 0px 2px 0px #146c43;
+    }
+}
+
+@-keyframes previewBtn {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.7;
+    }
+}
+
+.floating-preview .btn {
+    animation: previewBtn 2s ease-in-out 0s infinite alternate both;
+    -webkit-animation: previewBtn 2s ease-in-out 0s infinite alternate both;
+}
