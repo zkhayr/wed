@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>💌 Wedding Guestbook</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ffeef5, #fff);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    h1 {
+      color: #d81b60;
+      margin-bottom: 1rem;
+      animation: fadeInDown 0.6s ease;
+    }
+
+    input, textarea {
+      width: 80%;
+      max-width: 400px;
+      padding: 0.8rem;
+      margin: 0.4rem 0;
+      border: 2px solid #f8bbd0;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #ec407a;
+      background: #fff0f7;
+    }
+
+    button {
+      padding: 0.6rem 1.4rem;
+      font-size: 1rem;
+      background-color: #f06292;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.2s;
+      margin: 0.3rem;
+    }
+
+    button:hover {
+      background-color: #ec407a;
+      transform: scale(1.05);
+    }
+
+    #wishesContainer {
+      max-width: 600px;
+      margin: 2rem auto;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 1rem;
+    }
+
+    .wish {
+      background: #fff8fc;
+      border-left: 5px solid #f48fb1;
+      margin: 1rem 0;
+      padding: 1rem;
+      border-radius: 8px;
+      position: relative;
+      animation: fadeInUp 0.4s ease;
+    }
+
+    .deleteBtn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: transparent;
+      border: none;
+      color: #e57373;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .deleteBtn:hover {
+      color: #d32f2f;
+      transform: scale(1.2);
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+      gap: 1rem;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎉 Leave a Wish for the Couple!</h1>
+
+  <input type="text" id="name" placeholder="Your Name" /><br>
+  <textarea id="wish" placeholder="Your Wish..." rows="3"></textarea><br>
+  <button id="submitWish">Send Wish</button>
+
+  <div id="wishesContainer">
+    <h2>💬 Wishes</h2>
+    <div id="wishesList"></div>
+    <div class="pagination">
+      <button id="prevPage" disabled>Previous</button>
+      <button id="nextPage">Next</button>
+    </div>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+
+  <script>
+    // 🔧 Your Firebase Config
+    const firebaseConfig = {
+        apiKey: "AIzaSyAyXoBcnGabIuKSaCjso_hA5CsCDqKnNek",
+      authDomain: "wedding-guestbook-2086a.firebaseapp.com",
+      projectId: "wedding-guestbook-2086a",
+      storageBucket: "wedding-guestbook-2086a.firebasestorage.app",
+      messagingSenderId: "54243617499",
+      appId: "1:54243617499:web:bde886a3be0540492dfafe"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    const nameInput = document.getElementById('name');
+    const wishInput = document.getElementById('wish');
+    const submitBtn = document.getElementById('submitWish');
+    const wishesList = document.getElementById('wishesList');
+    const nextPageBtn = document.getElementById('nextPage');
+    const prevPageBtn = document.getElementById('prevPage');
+
+    let clientId = localStorage.getItem('clientId');
+    if (!clientId) {
+      clientId = 'client-' + Math.random().toString(36).substr(2, 9);
+      localStorage.setItem('clientId', clientId);
+    }
+
+    const pageSize = 3;
+    let lastVisible = null;
+    let firstVisible = null;
+    let pages = [];
+
+    async function loadWishes(direction = 'next') {
+      let query = db.collection('wishes').orderBy('timestamp', 'desc').limit(pageSize);
+
+      if (direction === 'next' && lastVisible) {
+        query = query.startAfter(lastVisible);
+      } else if (direction === 'prev' && pages.length > 1) {
+        const previousCursor = pages[pages.length - 2];
+        query = db.collection('wishes').orderBy('timestamp', 'desc').startAt(previousCursor).limit(pageSize);
+        pages.pop();
+      }
+
+      const snapshot = await query.get();
+
+      if (!snapshot.empty) {
+        wishesList.innerHTML = '';
+        snapshot.forEach(doc => {
+          const data = doc.data();
+          const div = document.createElement('div');
+          div.className = 'wish';
+          div.innerHTML = `<strong>${escapeHtml(data.name)}</strong><p>${escapeHtml(data.wish)}</p>`;
+
+          if (data.clientId === clientId) {
+            const btn = document.createElement('button');
+            btn.className = 'deleteBtn';
+            btn.textContent = '🗑️';
+            btn.onclick = () => {
+              if (confirm('Delete your wish?')) {
+                db.collection('wishes').doc(doc.id).delete();
+              }
+            };
+            div.appendChild(btn);
+          }
+
+          wishesList.appendChild(div);
+        });
+
+        firstVisible = snapshot.docs[0];
+        lastVisible = snapshot.docs[snapshot.docs.length - 1];
+        if (direction === 'next') pages.push(firstVisible);
+      }
+
+      // Update buttons
+      prevPageBtn.disabled = pages.length <= 1;
+      nextPageBtn.disabled = snapshot.size < pageSize;
+    }
+
+    submitBtn.addEventListener('click', async () => {
+      const name = nameInput.value.trim();
+      const wish = wishInput.value.trim();
+      if (!name || !wish) return alert('Please enter name and wish');
+
+      await db.collection('wishes').add({
+        name,
+        wish,
+        clientId,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+      });
+
+      nameInput.value = '';
+      wishInput.value = '';
+      pages = [];
+      lastVisible = null;
+      loadWishes();
+    });
+
+    nextPageBtn.onclick = () => loadWishes('next');
+    prevPageBtn.onclick = () => loadWishes('prev');
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    // Load first page on start
+    loadWishes();
+  </script>
+
+</body>
+</html>
