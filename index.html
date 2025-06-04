@@ -581,7 +581,7 @@
                     <button type="button" class="btn-close btn-close-white" data-modal-action="close"></button>
                 </div>
                 <div class="modal-body">
-                    <form class="formRSVP" data-form="card/submitRSVP">
+                    <!--<form class="formRSVP" data-form="card/submitRSVP">
                         <input type="hidden" name="thekahwin_csrf_token" value="" />
                         <input type="hidden" name="card_id" value="0">
                         <input type="hidden" name="card_token" value="77a40c03b1fb9ed3dda199e132f1d5d2">
@@ -623,7 +623,17 @@
                                 Hantar
                             </button>
                         </div>
-                    </form>
+                    </form>-->
+
+                    <form id="rsvpForm">
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="email" placeholder="Your Email" required>
+  <textarea name="message" placeholder="Your Message or Wish..." required></textarea>
+  <button type="submit">Submit</button>
+</form>
+
+
+                    
                 </div>
             </div>
         </div>
@@ -701,7 +711,28 @@
     <!-- Card Scripts -->
             <script src="https://zkhayr.github.io/wed/asset/theme/whimsical/script.js?v=1748917788"></script>
     
-        
+        <script>
+document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const data = {
+    name: this.name.value,
+    email: this.email.value,
+    message: this.message.value
+  };
+
+  fetch('https://hook.eu2.make.com/5hec4wbdl2imdso3ukeoemdmgbr5nfey', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  })
+  .then(() => {
+    alert("Thank you! Your message was sent 🎉");
+    this.reset();
+  })
+  .catch(() => alert("Oops! Something went wrong."));
+});
+</script>
     
 </body>
 
