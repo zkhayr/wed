@@ -3,29 +3,29 @@
 ============================================*/
 @keyframes onplay {
     0% {
-        background-color: #947439;
+        background-color: #DB7093;
         color: #FFFFFF;
         border: 1px solid #FFFFFF;
     }
 
     100% {
         background-color: #FFFFFF;
-        color: #947439;
-        border: 1px solid #947439;
+        color: #DB7093;
+        border: 1px solid #DB7093;
     }
 }
 
 @-webkit-keyframe onplay {
     0% {
-        background-color: #947439;
+        background-color: #DB7093;
         color: #FFFFFF;
         border: 1px solid #FFFFFF;
     }
 
     100% {
         background-color: #FFFFFF;
-        color: #947439;
-        border: 1px solid #947439;
+        color: #DB7093;
+        border: 1px solid #DB7093;
     }
 }
 
@@ -57,11 +57,11 @@
 }
 
 .js-preloader .preloader-inner .dot {
-    background: #947439;
+    background: #DB7093;
 }
 
 .js-preloader .preloader-inner .dots span {
-    background: #947439;
+    background: #DB7093;
 }
 
 /*============================================
@@ -107,7 +107,7 @@
 
 .jsCalendar thead .jsCalendar-nav-left:hover,
 .jsCalendar thead .jsCalendar-nav-right:hover {
-    background-color: #947439;
+    background-color: #DB7093;
 }
 
 .jsCalendar thead .jsCalendar-title {
@@ -130,7 +130,7 @@
 }
 
 .jsCalendar table tbody td.jsCalendar-current {
-    background-color: #947439;
+    background-color: #DB7093;
     border-radius: 8px;
     color: #FFFFFF;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
@@ -206,7 +206,7 @@
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #947439;
+    background: #DB7093;
 }
 
 html {
@@ -224,7 +224,7 @@ body {
     margin: auto;
     font-family: Korbin;
     letter-spacing: 1px;
-    color: #947439;
+    color: #DB7093;
     background-image: url("bg2.webp");
     background-size: cover;
     background-position: center;
@@ -239,25 +239,25 @@ p {
 }
 
 label {
-    color: #947439;
+    color: #DB7093;
     font-weight: 600;
     margin-bottom: 0.1em;
 }
 
 hr {
     height: 1.5px;
-    background: #947439;
+    background: #DB7093;
 }
 
 .btn-main {
-    background-color: #947439;
-    border: 1px solid #947439;
+    background-color: #DB7093;
+    border: 1px solid #DB7093;
     color: #FFFFFF;
 }
 
 .btn-main:hover {
     background-color: #FFFFFF;
-    border: 1px solid #947439;
+    border: 1px solid #DB7093;
     color: #947439 !important;
 }
 
@@ -270,7 +270,7 @@ hr {
 }
 
 .text-parent {
-    color: #947439;
+    color: #DB7093;
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 0px;
@@ -281,9 +281,9 @@ hr {
     font-size: 24px;
     font-weight: 400 !important;
     letter-spacing: 1px;
-    color: #947439 !important;
+    color: #DB7093 !important;
     margin-bottom: 0px;
-    text-shadow: 0px 0px 1px #947439;
+    text-shadow: 0px 0px 1px #DB7093;
 }
 
 .text-bride span {
@@ -296,9 +296,9 @@ hr {
 }
 
 .text-hashtag {
-    color: #947439 !important;
+    color: #DB7093 !important;
     margin: 1em 0em;
-    text-shadow: 0 1px 1px #947439;
+    text-shadow: 0 1px 1px #DB7093;
 }
 
 .form-group {
@@ -306,7 +306,7 @@ hr {
 }
 
 .form-control {
-    border: 1px solid #947439;
+    border: 1px solid #DB7093;
 }
 
 .img-logo {
@@ -326,7 +326,7 @@ hr {
 
 .social-media a {
     display: inline-flex;
-    background: #947439;
+    background: #DB7093;
     color: #FFFFFF;
     padding: 0.75em 0.8em;
     margin: 0em 0.25em;
@@ -341,7 +341,7 @@ hr {
 .table-program tr td:nth-child(1) {
     font-family: SpaceMono;
     font-weight: 800;
-    color: #947439;
+    color: #DB7093;
     white-space: nowrap;
 }
 
@@ -355,14 +355,14 @@ hr {
 
 .card-qr {
     background-color: #FFFFFF;
-    border: 1px solid #947439;
+    border: 1px solid #DB7093;
     border-radius: 4px;
     overflow: hidden;
 }
 
 .card-qr .title {
-    background-color: #947439;
-    border: 1px solid #947439;
+    background-color: #DB7093;
+    border: 1px solid #DB7093;
     font-size: 22px;
     color: #FFFFFF;
     padding: 1em;
@@ -391,17 +391,17 @@ hr {
 .card-qr .btn-copy:hover {}
 
 .card-qr label {
-    color: #4d6155;
+    color: #DB7093;
     font-weight: 600;
 }
 
 .card-qr p {
-    color: #947439;
+    color: #DB7093;
     margin-bottom: 0px;
 }
 
 .card-prayer {
-    border: 1px solid #947439;
+    border: 1px solid #DB7093;
     padding: 1em;
     margin-top: 1em;
     margin-bottom: 2em;
@@ -414,7 +414,7 @@ hr {
 
 .card-divider {
     display: block;
-    border: 1px solid #947439;
+    border: 1px solid #DB7093;
     margin: 2em 0em;
 }
 
@@ -442,9 +442,9 @@ hr {
 }
 
 .list-contact li a {
-    background: #947439;
+    background: #DB7093;
     color: #FFFFFF;
-    border: 1px solid #947439;
+    border: 1px solid #DB7093;
     border-radius: 50%;
     padding: 0.3em 0.5em;
     margin-left: 0.5em;
@@ -471,9 +471,9 @@ hr {
 
 .input-counter button:nth-child(1),
 .input-counter button:nth-child(3) {
-    background: #947439;
+    background: #DB7093;
     color: #FFFFFF;
-    border: 1px solid #947439;
+    border: 1px solid #DB7093;
     border-radius: 4px;
     margin: 0em 0.25em;
 }
@@ -488,7 +488,7 @@ hr {
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 6px;
-    box-shadow: #947439 0px 1px 5px 0px;
+    box-shadow: #DB7093 0px 1px 5px 0px;
 }
 
 .slider-gallery-main .owl-stage-outer {
@@ -522,7 +522,7 @@ hr {
     width: 100%;
     height: 100%;
     border-radius: 10px;
-    box-shadow: #947439 0px 1px 5px 0px;
+    box-shadow: #DB7093 0px 1px 5px 0px;
 }
 
 .slider-gallery-sub .owl-stage-outer {
@@ -530,7 +530,7 @@ hr {
 }
 
 .slider-guestbook .owl-dot {
-    background-color: #4d6155 !important;
+    background-color: #DB7093 !important;
     height: 10px;
     width: 10px;
     margin: 0px 5px;
@@ -539,7 +539,7 @@ hr {
 }
 
 .slider-guestbook .owl-dot.active {
-    background-color: #947439 !important;
+    background-color: #DB7093 !important;
 }
 
 .slider-guestbook .text {
@@ -560,7 +560,7 @@ hr {
     width: 100%;
     height: 100%;
     background: #FFFFFF;
-    color: #4d6155;
+    color: #DB7093;
     text-align: center;
     overflow: hidden;
     transform: translateX(-50%);
@@ -850,7 +850,7 @@ hr {
     z-index: 999;
     width: 100%;
     font-family: Korbin;
-    color: #947439;
+    color: #DB7093;
     text-transform: uppercase;
     margin-bottom: 0px;
     padding: 1em 0em 1em 0em;
@@ -962,11 +962,11 @@ hr {
     max-width: 250px;
     font-size: 14px;
     padding: 0.75em 1em;
-    box-shadow: 0px 2px 4px 1px #947439;
+    box-shadow: 0px 2px 4px 1px #DB7093;
 }
 
 .sub-page {
-    color: #947439;
+    color: #DB7093;
     text-align: center;
     padding: 3em 0em 4em 0em;
 }
@@ -1091,12 +1091,12 @@ hr {
 }
 
 .sub-page .container h4 {
-    color: #947439;
+    color: #DB7093;
     font-weight: 600;
 }
 
 .sub-page .container.container-countdown {
-    background-color: #947439;
+    background-color: #DB7093;
     margin-bottom: 2em;
     padding: 2em 1.5em;
 }
@@ -1106,7 +1106,7 @@ hr {
 }
 
 .sub-page .container.container-footer {
-    background-color: #947439;
+    background-color: #DB7093;
     color: #FFFFFF;
 }
 
@@ -1126,7 +1126,7 @@ hr {
 .appbar .appbar-nav {
     position: relative;
     z-index: 999999;
-    background: #947439;
+    background: #DB7093;
     max-height: 80px;
     padding: 1.25em 0.5em 0.75em 0.5em;
     border-radius: 20px 20px 0px 0px;
@@ -1165,9 +1165,9 @@ hr {
 .appbar .appbar-nav ul li:nth-child(3) i {
     display: inline-block;
     font-size: 24px;
-    color: #947439;
+    color: #DB7093;
     background: #FFFFFF;
-    border: 2px solid #947439;
+    border: 2px solid #DB7093;
     border-radius: 50%;
     padding: 12px;
 }
@@ -1189,19 +1189,19 @@ hr {
 }
 
 .appbar .appbar-modal .modal-dialog .modal-header {
-    background-color: #947439;
+    background-color: #DB7093;
     color: #FFFFFF;
-    border: 1px solid #947439;
+    border: 1px solid #DB7093;
 }
 
 .appbar .appbar-modal .modal-dialog .modal-body {
-    color: #947439;
+    color: #DB7093;
     background-color: #FFFFFF;
-    border: 1px solid #947439;
+    border: 1px solid #DB7093;
 }
 
 .appbar .appbar-modal .modal-dialog .modal-body label {
-    color: #947439;
+    color: #DB7093;
 }
 
 .appbar .appbar-modal .modal-dialog .modal-body .btn-main {}
@@ -1229,7 +1229,7 @@ hr {
 .floating-bar .floating-music {
     position: fixed;
     bottom: 100px;
-    background: #947439;
+    background: #DB7093;
     font-size: 20px;
     color: #FFFFFF;
     border: 1px solid #FFFFFF;
