@@ -129,6 +129,42 @@
       gap: 1rem;
     }
 
+#qrContainer {
+      margin-top: 3rem;
+      padding: 1.5rem;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      animation: fadeInUp 0.6s ease;
+    }
+
+    #qrImage {
+      margin: 1rem 0;
+      border: 0px solid #f8bbd0;
+      border-radius: 10px;
+      max-width: 80%;
+    }
+
+    .account-info {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      background: #ffe3ec;
+      padding: 1rem;
+      border-radius: 10px;
+    }
+
+    .account-number {
+      font-weight: bold;
+      color: #c2185b;
+      font-size: 1.3rem;
+    }
+
+
+        
+
     @keyframes fadeInDown {
       from { opacity: 0; transform: translateY(-20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -518,7 +554,7 @@
         </div>
     </div>
 
-            <div class="container container-gift-money">
+          <!--  <div class="container container-gift-money">
             <div data-aos="fade-down" data-aos-delay="0" data-aos-duration="1000">
                 <div class="card-qr">
                     <div class="title">
@@ -550,7 +586,33 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
+<div class="container container-guestbook">
+        <div data-aos="fade-down" data-aos-delay="0" data-aos-duration="1000">
+        <div id="qrContainer">
+    <h2>🎁 Money Gift</h2>
+    <p>Scan this QR code or download 👇</p>
+    <img id="image-qr" src="https://zkhayr.github.io/wed/asset/image/qrdummy.jpg" alt="QR Duit Kahwin" width="200">
+    <br>
+    <button onclick="downloadQR()">Muat Turun QR</button>
+
+<p></p>
+    <p>or transfer to this account:</p>
+    <div class="account-info">
+      
+      <p >Khairol Zayana Binti Khairol Azmi</p>
+      <p>Maybank</p>
+      <p class="account-number" id="accNum">157081435597</p>
+      
+      <button onclick="copyAccount()">📋 Copy</button>
+    </div>
+
+    <p><small>Terima kasih atas kasih sayang dan doa kalian</small></p>
+  </div>
+  </div>
+  </div>  
+
+
     
     <div class="container container-prayer">
         <div data-aos="zoom-in" data-aos-delay="0" data-aos-duration="1000">
@@ -975,6 +1037,26 @@ document.getElementById('rsvpForm').addEventListener('submit', function(e) {
 
     // Load first page on start
     loadWishes();
+
+       function downloadQR() {
+      const qr = document.getElementById('qrImage');
+      const link = document.createElement('a');
+      link.href = qr.src;
+      link.download = 'qrdummy.jpg';//kena ubah
+      link.click();
+    }
+
+    function copyAccount() {
+      const accNum = document.getElementById('accNum').textContent;
+      navigator.clipboard.writeText(accNum).then(() => {
+        alert("Nombor akaun telah disalin!");
+      }).catch(err => {
+        alert("Gagal salin nombor akaun.");
+      });
+    }
+
+
+      
   </script>
 
 
