@@ -443,7 +443,7 @@ hr {
 
 .list-contact li a {
     background: #FFFFFF;
-    color: #DB7093;
+    color: #1B1821;
     border: 1px solid #FFFFFF;
     border-radius: 50%;
     padding: 0.3em 0.5em;
@@ -471,9 +471,9 @@ hr {
 
 .input-counter button:nth-child(1),
 .input-counter button:nth-child(3) {
-    background: #DB7093;
+    background: #1B1821;
     color: #FFFFFF;
-    border: 1px solid #DB7093;
+    border: 1px solid #1B1821;
     border-radius: 4px;
     margin: 0em 0.25em;
 }
