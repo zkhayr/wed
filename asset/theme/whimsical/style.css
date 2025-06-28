@@ -442,9 +442,9 @@ hr {
 }
 
 .list-contact li a {
-    background: #DB7093;
-    color: #FFFFFF;
-    border: 1px solid #DB7093;
+    background: #FFFFFF;
+    color: #DB7093;
+    border: 1px solid #FFFFFF;
     border-radius: 50%;
     padding: 0.3em 0.5em;
     margin-left: 0.5em;
