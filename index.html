@@ -41,12 +41,7 @@
     
         
     <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #ffeef5, #fff);
-      padding: 0rem;
-      text-align: center;
-    }
+    
 
     h1 {
       color: #d81b60;
@@ -162,8 +157,157 @@
       font-size: 1.3rem;
     }
 
+.gate-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
 
-        
+    .gate-door {
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      top: 0;
+      transition: transform 2s ease-in-out 0.5s;
+      z-index: 2;
+    }
+
+    .left-door {
+      left: 0;
+      background: url('https://zkhayr.github.io/wed/asset/theme/whimsical/gate.webp') center center/cover no-repeat;
+      opacity: 0.9 ;
+      
+    }
+
+    .right-door {
+      right: 0;
+      background: url('https://zkhayr.github.io/wed/asset/theme/whimsical/gate2.webp') center center/cover no-repeat;
+      opacity: 0.9;
+    }
+
+    .click-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      z-index: 3;
+    }
+
+    .click-text {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(255,255,255,0.7);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      color: #333;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      z-index: 4;
+    }
+
+    .invitation {
+      opacity: 0.7; /* Show faintly */
+    transition: opacity 1s ease;
+    z-index: 1;
+    }
+
+    .invitation img {
+      display: block;
+      width: 100%;
+    }
+
+.wax-seal {
+  position: absolute;
+  width: 80px; /* adjust as needed */
+  height: auto;
+  z-index: 3;
+}
+
+.wax-left {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.wax-right {
+  top: 50%;
+  right: 100%;
+  transform: translate(50%, -50%);
+}
+
+.wax-seal-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px; /* adjust to your design */
+  height: auto;
+  z-index: 5;
+  pointer-events: none;
+  transition: opacity 1s ease;
+}
+
+.wax-seal-full {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  transition: opacity 0.6s ease, transform 0.7s ease; /* needed */
+  pointer-events: none;
+}
+
+/* Left half seal on the left door */
+.wax-seal-l {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 40px; /* Half width of full seal */
+  opacity: 0; /* Hidden until clicked */
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.fade-out-down {
+  opacity: 0;
+  transform: translate(-50%, 20px); /* move downward */
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+
+
+.calligraphy-text {
+      position: absolute;
+      top: 58%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Lucida Handwriting', cursive;
+      font-size: 15px;
+      color: #333;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+      z-index: 4;
+      pointer-events: none;
+      animation: pulse 2.5s ease-in-out infinite;
+       transition: opacity 1s ease; /* Smooth fade */
+    }
+
+
+
+    @keyframes pulse {
+      0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+      50% { transform: translate(-50%, -50%) scale(1.05); opacity: 0.85; }
+      100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    }
+
 
     @keyframes fadeInDown {
       from { opacity: 0; transform: translateY(-20px); }
@@ -174,6 +318,9 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
+        
+
+
   </style>
     
     
@@ -197,10 +344,39 @@
 <input type="hidden" id="youtubeID" value="">
 
 <div class="main-page">
+
+<div class="gate-wrapper">
+  <!-- Gate doors -->
+
+
+  <div class="gate-door left-door" id="leftDoor">
+    
+   
+  </div>
+    <div class="gate-door right-door" id="rightDoor">
+    
+  </div>
+
+
+  
+  <img src="https://zkhayr.github.io/wed/asset/theme/whimsical/seal.webp" alt="Wax Seal" class="wax-seal-full" id="waxFull"/>
+
+ 
+    <!-- Invitation behind the gate -->
+ <div class="invitation" id="invitation">
+    <img src="C:/Users/k.zahiera/Desktop/kk/asset/theme/whimsical/bg1.webp" alt="Wedding Invitation">
+  </div>
+  <div class="click-layer" onclick="openGate()" data-open="sub"></div>
+
+<!-- Calligraphy text in the center -->
+  <div class="calligraphy-text" id="gateText">Click to open</div>
+
+
+    
     <!--<div class="main-container">-->
         <div class="main-particles" id="main-particles" data-aos="fade-down" data-aos-delay="1000" data-aos-duration="2500"></div>
         <div class="container-content" data-aos="slide-up" data-aos-delay="250" data-aos-duration="1500">
-            <div class="main-animation" style="z-index: -1;">
+            <!--<div class="main-animation" style="z-index: -1;">
                 <div class="main-top-5" data-aos="fade-up" data-aos-delay="2500" data-aos-duration="1500">
                     <div class="el"></div>
                 </div>
@@ -244,7 +420,7 @@
                         <!--<span>
                             4                            &#x2022;
                             10                            &#x2022;
-                            2025                        </span>-->
+                            2025                        </span>
                     </div>
                 </div>
             </div>
@@ -276,7 +452,7 @@
                             <span>10 </span>
                             <span>&#x2022;</span>
                             <span>2025 </span>
-                        </h2>-->
+                        </h2>
                     </div>
                     <div data-aos="zoom-in" data-aos-delay="1000" data-aos-duration="1000">
                         <h6>12 RABIULAKHIR 1447H</h6>
@@ -298,11 +474,16 @@
                             </button>
                     </div>
                 </div>
-            </div>
+            </div>-->
         </div>
     </div>
 </div>
 
+
+<div data-aos="fade-down" data-aos-delay="0" data-aos-duration="4000">
+<img src="https://zkhayr.github.io/wed/asset/theme/whimsical/bg1.webp" alt="Wedding Invitation">
+</div>
+    
 <div class="sub-page">
     <div class="sub-particles" id="sub-particles"></div>
     <div class="sub-animation">
@@ -1073,7 +1254,27 @@ document.getElementById('rsvpForm').addEventListener('submit', function(e) {
         alert("Gagal salin nombor akaun.");
       });
     }
+function openGate() {
 
+
+ 
+   document.getElementById('leftDoor').style.transform = 'translateX(-100%)';
+    document.getElementById('rightDoor').style.transform = 'translateX(100%)';
+   document.getElementById('invitation').style.opacity = 1;
+     document.getElementById('gateText').style.display = 1; // hide calligraphy after opening
+  document.getElementById('waxFull').classList.add('fade-out-down');
+
+
+   // Fade out the text smoothly
+  const gateText = document.getElementById('gateText');
+  gateText.classList.add('fade-out');
+
+  // After fade is done (e.g. 1s), hide it completely
+  setTimeout(() => {
+    gateText.style.display = "none";
+  }, 1000); // Matches the CSS transition time (1s)
+  
+  }
 
       
   </script>
