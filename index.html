@@ -1344,6 +1344,8 @@ document.getElementById('submitRSVP').addEventListener('click', async () => {
   
 });
 
+
+      
 //Show success message with fade-in
   const successMsg = document.getElementById('rsvpSuccess');
   successMsg.classList.add('show');
@@ -1352,6 +1354,14 @@ document.getElementById('submitRSVP').addEventListener('click', async () => {
   setTimeout(() => {
     document.getElementById('rsvpSuccess').style.display = 'none';
   }, 5000);
+
+
+      //hide form
+document.getElementById('rsvpSection').style.display = 'none';
+
+
+
+      
       
 function openGate() {
 
