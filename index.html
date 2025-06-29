@@ -1124,7 +1124,7 @@ sebagai tanda penghargaan dan ingatan. </p>
           
      
             
-                       <a class="btn btn-main w-100" onclick="downloadQR() style="cursor: pointer;">
+                       <a class="btn btn-main w-100" onclick="downloadQR()" style="cursor: pointer;">
                            <i class="fa fa-download"></i> Download QR</a> 
                             <img id="qrImage" src="https://zkhayr.github.io/wed/asset/image/yanaqr.jpeg" alt="QR Duit Kahwin" width="200" style="display: none;></img>
  
@@ -1358,8 +1358,16 @@ document.getElementById('rsvpForm').addEventListener('submit', function(e) {
       link.href = qr.src;
       link.download = 'yanaqr.jpeg';//kena ubah
       link.click();
+    document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+       alert('QR code has been downloaded successfully!');    
     }
 
+  
+
+
+      
     function copyAccount() {
       const accNum = document.getElementById('accNum').textContent;
       navigator.clipboard.writeText(accNum).then(() => {
