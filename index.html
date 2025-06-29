@@ -1520,6 +1520,11 @@ function loadWishlist() {
   function reserveItem(id, itemName) {
     const name = prompt(`Enter your name to reserve "${itemName}"`);
     if (name) {
+
+    console.log("Saving to Firestore:", {
+      reservedBy: name,
+      reservedClientId: clientId
+    });
       db.collection('wishlists').doc(id).update({ 
         reservedBy: name, 
         reservedClientId: clientId 
