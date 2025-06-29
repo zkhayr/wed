@@ -910,42 +910,42 @@ sebagai tanda penghargaan dan ingatan. </p>
 
 
 <div class="appbar">
-    <div class="appbar-nav animate__animated animate__slideInUp" style="display: none;">
-        <ul>
-            <li data-modal-target="gift">
-                <i class="fa fa-gift"></i>
-                <span>Hadiah</span>
-            </li>
-            <li data-modal-target="contact">
-                <i class="fa fa-phone"></i>
-                <span>Hubungi</span>
-            </li>
-              <li data-modal-target="rsvp">
-                <i class="fa fa-clipboard-list"></i>
-                <span>RSVP</span>
-            </li>
-            <li data-modal-target="location">
-                <i class="fa fa-map"></i>
-                <span>Lokasi</span>
-            </li>
+        <div class="appbar-nav animate__animated animate__slideInUp" style="display: none;">
+            <ul>
+                <li data-modal-target="gift">
+                    <i class="fa fa-gift"></i>
+                    <span>Hadiah</span>
+                </li>
+                <li data-modal-target="contact">
+                    <i class="fa fa-phone"></i>
+                    <span>Hubungi</span>
+                </li>
+                  <li data-modal-target="rsvp">
+                    <i class="fa fa-clipboard-list"></i>
+                    <span>RSVP</span>
+                </li>
+                <li data-modal-target="location">
+                    <i class="fa fa-map"></i>
+                    <span>Lokasi</span>
+                </li>
             
-            <li data-modal-target="calendar">
-                <i class="fa fa-calendar"></i>
-                <span>Kalendar</span>
-            </li>
+                <li data-modal-target="calendar">
+                    <i class="fa fa-calendar"></i>
+                    <span>Kalendar</span>
+                </li>
           
-        </ul>
-    </div>
-
-    <div class="appbar-modal animate__animated animate__slideInUp animate__faster" data-modal="contact" style="display: none;">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">AHLI KELUARGA YANG BOLEH DIHUBUNGI</h5>
-                    <button type="button" class="btn-close btn-close-white" data-modal-action="close"></button>
-                </div>
-                <div class="modal-body">
-                    <ul class="list-contact">
+            </ul>
+        </div>
+        <!--menu utk contact-->
+        <div class="appbar-modal animate__animated animate__slideInUp animate__faster" data-modal="contact" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">AHLI KELUARGA YANG BOLEH DIHUBUNGI</h5>
+                        <button type="button" class="btn-close btn-close-white" data-modal-action="close"></button>
+                        </div>
+                    <div class="modal-body">
+                        <ul class="list-contact">
                                                         <li>
                                     <label><i class="fa fa-user-circle me-2"></i>Ayah</label>
                                     <a href="tel:+60133427570"><span class="fa fa-phone"></span></a>
@@ -968,157 +968,124 @@ sebagai tanda penghargaan dan ingatan. </p>
                                     <a href="https://wa.me/0126155081" target="_blank"><span class="fab fa-whatsapp"></span></a>
                                 </li>
                                             </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="appbar-modal animate__animated animate__slideInUp animate__faster" data-modal="location" style="display: none;">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">LOKASI</h5>
-                    <button type="button" class="btn-close btn-close-white" data-modal-action="close"></button>
-                </div>
-                <div class="modal-body">
-                                            <div class="iframe-container">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1022.7301507972004!2d101.08943526957155!3d4.5946964997112465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31caec63a9427c0b%3A0x45f23931d1c47223!2sWEIL%20Hotel!5e1!3m2!1sen!2smy!4v1748945996030!5m2!1sen!2smy" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                       </div>
-                    
-                                        <div class="row g-2">
-                        <div class="col-12">
-                            <a class="btn btn-main w-100"  href="https://maps.app.goo.gl/kNvV2XeaUZufkG5H8" target="_blank">
-                                <i class="fa fa-map-marked me-2"></i>
-                                Google Maps
-                            </a>
-                        </div>
-                        <div class="col-12">
-                            <a class="btn btn-main w-100"  href="https://www.waze.com/en/live-map/directions/cyberjaya?place=w.66584605.666108199.9300662" target="_blank">
-                                <i class="fab fa-waze me-2"></i>
-                                Waze
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="appbar-modal animate__animated animate__slideInUp animate__faster" data-modal="calendar" style="display: none;">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">KALENDAR</h5>
-                    <button type="button" class="btn-close btn-close-white" data-modal-action="close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="w-100 text-center mb-4">
-                        <div class="auto-jsCalendar" data-date="4/10/2025" data-month-format="month YYYY" data-first-day-of-the-week="2" data-navigator-position="right" data-day-format="DDD" data-language="my"></div>
-                    </div>
-                    <div class="row g-2">
-                        <div class="col-12">
-                            <a class="btn btn-main w-100" href="https://zkhayr.github.io/wed/card.ics" target="_blank">
-                                <i class="fab fa-apple me-2"></i>
-                                Apple Calendar
-                            </a>
-                        </div>
-                        <div class="col-12">
-                            <a class="btn btn-main w-100" href="https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MDJzcHRjMXU1Z2hiMnF0ZnVucnFvbDdpY2IgZmFtaWx5MTEyNDgxMjg1MDcxOTkyOTg0NDZAZw&tmsrc=family11248128507199298446%40group.calendar.google.com" target="_blank">
-                                <i class="fab fa-google me-2"></i>
-                                Google Calendar
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="appbar-modal animate__animated animate__slideInUp animate__faster" data-modal="rsvp" style="display: none;">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">RSVP</h5>
-                    <button type="button" class="btn-close btn-close-white" data-modal-action="close"></button>
-                </div>
-                <div class="modal-body">
-                    <!--<form class="formRSVP" data-form="card/submitRSVP">
-                        <input type="hidden" name="thekahwin_csrf_token" value="" />
-                        <input type="hidden" name="card_id" value="0">
-                        <input type="hidden" name="card_token" value="77a40c03b1fb9ed3dda199e132f1d5d2">
-                        <div class="form-group">
-                            <input class="form-control" type="text" name="nama" placeholder="Nama" required>
-                        </div>
-                        <div class="form-group">
-                            <input class="form-control" type="text" name="telefon" placeholder="No. Telefon" pattern="\d*" input-accept="number" inputmode="numeric" required>
-                        </div>
-                        <div class="row g-3 mb-3">
-                            <div class="col-6 text-center">
-                                <label class="text-sm">Jumlah Dewasa</label>
-                                <div class="input-counter">
-                                    <button type="button">
-                                        <i class="fa fa-minus"></i>
-                                    </button>
-                                    <input class="form-control" type="number" name="dewasa" value="0" min="1" required>
-                                    <button type="button">
-                                        <i class="fa fa-plus"></i>
-                                    </button>
-                                </div>
+        <!--end menu contact-->
+   
+    
+    <!--Menu utk location-->
+            <div class="appbar-modal animate__animated animate__slideInUp animate__faster" data-modal="location" style="display: none;">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">LOKASI</h5>
+                            <button type="button" class="btn-close btn-close-white" data-modal-action="close"></button>
                             </div>
-                            <div class="col-6 text-center">
-                                <label class="text-sm">Jumlah Kanak-Kanak</label>
-                                <div class="input-counter">
-                                    <button type="button">
-                                        <i class="fa fa-minus"></i>
-                                    </button>
-                                    <input class="form-control" type="number" name="kanak" value="0" min="0">
-                                    <button type="button">
-                                        <i class="fa fa-plus"></i>
-                                    </button>
+                        <div class="modal-body">
+                                        <div class="iframe-container">
+                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1022.7301507972004!2d101.08943526957155!3d4.5946964997112465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31caec63a9427c0b%3A0x45f23931d1c47223!2sWEIL%20Hotel!5e1!3m2!1sen!2smy!4v1748945996030!5m2!1sen!2smy" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                        </div>
+    
+                                    <div class="row g-2">
+                                    <div class="col-12">
+                                    <a class="btn btn-main w-100"  href="https://maps.app.goo.gl/kNvV2XeaUZufkG5H8" target="_blank">
+                                        <i class="fa fa-map-marked me-2"></i>
+                                        Google Maps
+                                    </a>
+                                    </div>
+                                <div class="col-12">
+                                    <a class="btn btn-main w-100"  href="https://www.waze.com/en/live-map/directions/cyberjaya?place=w.66584605.666108199.9300662" target="_blank">
+                                        <i class="fab fa-waze me-2"></i>
+                                        Waze
+                                        </a>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group mb-2">
-                            <button class="btn btn-main w-100">
-                                <i class="fa fa-pen me-2"></i>
-                                Hantar
-                            </button>
-                        </div>
-                    </form>-->
+                    </div>
+                    </div>
+                    </div>
+ <!--end menu location-->
 
-                   <!-- <form id="rsvpForm">
-  <input type="text" name="name" placeholder="Your Name" required>
-  <input type="email" name="email" placeholder="Your Email" required>
-  <textarea name="message" placeholder="Your Message or Wish..." required></textarea>
-  <button type="submit">Submit</button>
-</form>-->
+
+
+     <!--start menu calender-->
+            <div class="appbar-modal animate__animated animate__slideInUp animate__faster" data-modal="calendar" style="display: none;">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">KALENDAR</h5>
+                                <button type="button" class="btn-close btn-close-white" data-modal-action="close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="w-100 text-center mb-4">
+                                    <div class="auto-jsCalendar" data-date="4/10/2025" data-month-format="month YYYY" data-first-day-of-the-week="2" data-navigator-position="right" data-day-format="DDD" data-language="my"></div>
+                                </div>
+                                <div class="row g-2">
+                                <div class="col-12">
+                                    <a class="btn btn-main w-100" href="https://zkhayr.github.io/wed/card.ics" target="_blank">
+                                        <i class="fab fa-apple me-2"></i>
+                                        Apple Calendar
+                                    </a>
+                                </div>
+                                <div class="col-12">
+                                    <a class="btn btn-main w-100" href="https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MDJzcHRjMXU1Z2hiMnF0ZnVucnFvbDdpY2IgZmFtaWx5MTEyNDgxMjg1MDcxOTkyOTg0NDZAZw&tmsrc=family11248128507199298446%40group.calendar.google.com" target="_blank">
+                                        <i class="fab fa-google me-2"></i>
+                                        Google Calendar
+                                    </a>
+                                </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+ <!--end menu calender-->
+
+
+    <!--start menu rsvp-->
+            <div class="appbar-modal animate__animated animate__slideInUp animate__faster" data-modal="rsvp" style="display: none;">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">RSVP</h5>
+                                <button type="button" class="btn-close btn-close-white" data-modal-action="close"></button>
+                            </div>
+                            <div class="modal-body">
+                   
 <!--<iframe src="https://industrious-willow-207.notion.site/ebd/20707475a77280dfa778df417df01da5" width="100%" height="600" frameborder="0" allowfullscreen />-->
-<div class="form-group mb-2">
-    <div class="w-100 text-center mb-4">
-        <div class="col-12">
+                            <div class="form-group mb-2">
+                                <div class="w-100 text-center mb-4">
+                                <div class="col-12">
       
-    <div id="rsvpSection">
-        We'd love to know if you'll be joining us. Please complete this RSVP.   <p></p>  
-         <input type="text" id="rsvpName" placeholder="Your Name" />
-          <select id="rsvpAttendance">
-            <option value="">Will you attend?</option>
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-          </select>
-        <input type="number" id="rsvpPax" min="1" max="3" placeholder="No. of Pax (max 3)" />
-          <textarea id="rsvpNote" placeholder="Any message (optional)"></textarea>
+                                    <div id="rsvpSection">
+                                            We'd love to know if you'll be joining us. Please complete this RSVP.   <p></p>  
+                                             <input type="text" id="rsvpName" placeholder="Your Name" />
+                                              <select id="rsvpAttendance">
+                                                    <option value="">Will you attend?</option>
+                                                    <option value="yes">Yes</option>
+                                                    <option value="no">No</option>
+                                              </select>
+                                            <input type="number" id="rsvpPax" min="1" max="3" placeholder="No. of Pax (max 3)" />
+                                            <textarea id="rsvpNote" placeholder="Any message (optional)"></textarea>
       <!--<button id="submitRSVP">Submit RSVP</button>-->
-<div id="rsvpSuccess" style="color: green; margin-top: 5px;">
-  Thank you for your RSVP!
-</div>   
-<buttion id="submitRSVP">      
-    <a  class="btn btn-main w-100"  target="_blank">
+                                            <div id="rsvpSuccess" style="color: green; margin-top: 5px;">
+                                              Thank you for your RSVP!
+                                            </div>   
+                                            <buttion id="submitRSVP">      
+                                            <a  class="btn btn-main w-100"  target="_blank">
 
-                                <i class="fa fa-pen me-2"></i>Submit RSVP</button>
-</a></div>
-        </div>
-    </div>
-</div>
-
+                                                <i class="fa fa-pen me-2"></i>Submit RSVP</button>
+                                            </a>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+<!--end menu rsvp-->
 
             
 <!--untuk gift-->
@@ -1126,7 +1093,7 @@ sebagai tanda penghargaan dan ingatan. </p>
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">RSVP</h5>
+                    <h5 class="modal-title">GIFT</h5>
                     <button type="button" class="btn-close btn-close-white" data-modal-action="close"></button>
                 </div>
                 <div class="modal-body">
@@ -1172,7 +1139,7 @@ sebagai tanda penghargaan dan ingatan. </p>
         </div>
     </div>
 </div>
-
+<!--end gift-->
 
 
 <div class="modal-backdrop" style="display: none;"></div>
