@@ -150,14 +150,14 @@
     .account-info {
       margin-top: 1rem;
       font-size: 1.1rem;
-      background: #ffe3ec;
+      background: #1B1821;
       padding: 1rem;
       border-radius: 10px;
     }
 
     .account-number {
       font-weight: bold;
-      color: #c2185b;
+      color: #1B1821;
       font-size: 1.3rem;
     }
 
@@ -1072,7 +1072,7 @@ sebagai tanda penghargaan dan ingatan. </p>
                                             <div id="rsvpSuccess" style="color: green; margin-top: 5px;">
                                               Thank you for your RSVP!
                                             </div>   
-                                            <buttion id="submitRSVP">      
+                                            <button id="submitRSVP">      
                                             <a  class="btn btn-main w-100"  target="_blank">
 
                                                 <i class="fa fa-pen me-2"></i>Submit RSVP</button>
@@ -1102,10 +1102,13 @@ sebagai tanda penghargaan dan ingatan. </p>
                     <div class="form-group mb-2">
                                 <div class="w-100 text-center mb-4">
                                 <div class="col-12">
-      Your presence is the greatest gift. If you'd like to bless us further, kindly scan the QR code below.   <p></p> 
-                    <img id="qrImage" src="https://zkhayr.github.io/wed/asset/image/yanaqr.jpeg" alt="QR Duit Kahwin" width="200">
+      Jika ingin memberi sumbangan, anda boleh berbuat demikian melalui pemindahan atau kod QR di bawah. <br>
+  <em>Your presence is the greatest gift. If you wish to contribute, you may do so via transfer or QR code below.</em>  <p></p> 
+                    <img id="qrImage" src="https://zkhayr.github.io/wed/asset/image/yanaqr.jpeg" alt="QR Duit Kahwin" width="100">
     <br>
-    <button onclick="downloadQR()">Download QR</button>
+    <button onclick="downloadQR()">
+        <a  class="btn btn-main w-100"  target="_blank"> <i class="fa fa-download"></i>Download QR</button>
+    </a>
 
 <p></p>
     <p>atau anda juga boleh menggunakan kaedah transfer ke account :</p>
@@ -1115,7 +1118,14 @@ sebagai tanda penghargaan dan ingatan. </p>
       <br>Maybank</br>
       <p class="account-number" id="accNum">157081435597</p>
       
-      <button onclick="copyAccount()">📋 Copy</button>
+      <button onclick="copyAccount()">
+           <a  class="btn btn-main w-100"  target="_blank"> <i class="fa fa-copy"></i>Copy</button>
+    </a>
+       
+                                           
+
+                                               
+                                          
     </div>
 
     <p><small>Terima kasih atas kasih sayang dan doa kalian</small></p>
