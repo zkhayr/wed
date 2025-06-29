@@ -1158,12 +1158,12 @@ sebagai tanda penghargaan dan ingatan. </p>
  
                                 <p></p>
                                 <p></p>
-                                <section id="wishlistSection">
+                                <div id="wishlistSection">
                      <br> <h2>Our Wishlist</h2></br>
                       <ul id="wishlistItems">
                         <!-- Items will be loaded here -->
                       </ul>
-                            </section>
+                            </div>
                            
                 </div>
                  </div>
@@ -1478,19 +1478,22 @@ rsvpAttendanceInput.addEventListener('change', () => {
   db.collection('wishlists').get().then(snapshot => {
     wishlistItems.innerHTML = ''; // clear existing
     snapshot.forEach(doc => {
-      const item = doc.data();
+      const data = doc.data();
+       
       const li = document.createElement('li');
+       
 
-      li.innerHTML = `
-        <strong>${item.item}</strong><br>
-        ${item.link ? `<a href="${item.link}" target="_blank" style="color: #666;">
-          <i class="fas fa-link"></i> View Item</a><br>` : ""}
-        ${item.image ? `<img src="${item.image}" style="max-width: 100px; margin-top: 8px;"><br>` : ""}
-        ${item.reservedBy 
-          ? `<em>Reserved by ${item.reservedBy}</em>`
-          : `<button onclick="reserveItem('${doc.id}', '${item.item}')">I want to buy for you</button>`
-        }
-      `;
+     
+li.innerHTML = `
+  <strong>${data.item}</strong><br>
+  ${data.link ? `<a href="${data.link}" target="_blank" style="color: #666;">
+    <i class="fas fa-link"></i> View Item</a><br>` : ""}
+  ${data.image ? `<img src="${data.image}" style="max-width: 100px; margin-top: 8px;"><br>` : ""}
+  ${data.reservedBy 
+    ? `<em>Reserved by ${data.reservedBy}</em>`
+    : `<button onclick="reserveItem('${doc.id}', '${data.item}')">I want to buy for you</button>`
+  }
+`;
 
       wishlistItems.appendChild(li);
     });
