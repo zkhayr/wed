@@ -1385,6 +1385,10 @@ document.getElementById('submitRSVP').addEventListener('click', async () => {
       timestamp: firebase.firestore.FieldValue.serverTimestamp()
   });
 
+
+// Simulate successful RSVP submission
+  console.log('RSVP submitted:', { name, attending, pax, note });
+    
 rsvpAttendanceInput.addEventListener('change', () => {
   if (rsvpAttendanceInput.value === 'yes') {
     paxInput.style.display = 'block';
@@ -1394,8 +1398,7 @@ rsvpAttendanceInput.addEventListener('change', () => {
   }
 });
 
-// Simulate successful RSVP submission
-  console.log('RSVP submitted:', { name, attending, pax, note });
+
     
 //Show success message with fade-in
 const successMsg = document.getElementById('rsvpSuccess');
