@@ -22,6 +22,7 @@
  <link rel="icon" type="image/x-icon" href="https://zkhayr.github.io/wed/asset/image/favicon.ico">
     <!-- Fonts CSS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://zkhayr.github.io/wed/asset/css/style.css">
@@ -1155,7 +1156,8 @@ sebagai tanda penghargaan dan ingatan. </p>
                            <i class="fa fa-download"></i> Download QR</a> 
                             <img id="qrImage" src="https://zkhayr.github.io/wed/asset/image/yanaqr.jpeg" alt="QR Duit Kahwin" width="200" style="display: none;>
  
-                                
+                                <p></p>
+                                <p></p>
                                 <section id="wishlistSection">
                       <h2>Our Wishlist</h2>
                       <ul id="wishlistItems">
@@ -1485,7 +1487,7 @@ rsvpAttendanceInput.addEventListener('change', () => {
         ${item.image ? `<img src="${item.image}" style="max-width: 100px; margin-top: 8px;"><br>` : ""}
         ${item.reservedBy 
           ? `<em>Reserved by ${item.reservedBy}</em>`
-          : `<button onclick="reserveItem('${doc.id}', '${item.item}')">Saya nak belikan</button>`
+          : `<button onclick="reserveItem('${doc.id}', '${item.item}')">I want to buy for you</button>`
         }
       `;
 
