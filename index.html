@@ -1159,7 +1159,7 @@ sebagai tanda penghargaan dan ingatan. </p>
                                 <p></p>
                                 <p></p>
                                 <section id="wishlistSection">
-                      <h2>Our Wishlist</h2>
+                     <br> <h2>Our Wishlist</h2></br>
                       <ul id="wishlistItems">
                         <!-- Items will be loaded here -->
                       </ul>
@@ -1474,6 +1474,7 @@ rsvpAttendanceInput.addEventListener('change', () => {
 });
       
  function loadWishlist() {
+     console.log("Loading wishlist..."); // Debug
   db.collection('wishlists').get().then(snapshot => {
     wishlistItems.innerHTML = ''; // clear existing
     snapshot.forEach(doc => {
