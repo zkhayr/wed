@@ -340,23 +340,27 @@
        transition: opacity 1s ease; /* Smooth fade */
     }
 
-.scroll-guide {
+.scroll-down-guide {
   position: absolute;
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  text-align: center;
-  color: #1B1821; /* darkblue */
-  font-family: 'Cormorant', serif;
-  opacity: 0;
-  animation: fadeBounce 3s ease-in-out 1;
+  z-index: 999;
+  animation: fadeIn 2s ease forwards;
 }
 
-.scroll-guide .arrow {
-  font-size: 24px;
-  display: block;
-  animation: bounce 1.5s infinite;
+.chevron {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-left: 3px solid #ccc;
+  border-bottom: 3px solid #ccc;
+  transform: rotate(-45deg);
+  animation: bounce 2s infinite;
+  margin: auto;
 }
+
+
 
  .wishlistItems {
     list-style: none;
@@ -385,18 +389,18 @@
 
 
         
-/* Main entrance animation */
-@keyframes fadeBounce {
-  0% { opacity: 0; transform: translate(-50%, 20px); }
-  30% { opacity: 1; transform: translate(-50%, 0); }
-  90% { opacity: 1; }
-  100% { opacity: 0; }
+@keyframes bounce {
+  0%, 100% {
+    transform: rotate(-45deg) translateY(0);
+  }
+  50% {
+    transform: rotate(-45deg) translateY(8px);
+  }
 }
 
-/* Repeating bounce for the arrow */
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(8px); }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
     @keyframes pulse {
@@ -579,9 +583,8 @@
 <img src="https://zkhayr.github.io/wed/asset/theme/whimsical/bg1.webp" alt="Wedding Invitation" height="600">
 </div>
 
-<div id="scrollGuide" class="scroll-guide">
-  <span class="arrow">↓</span>
-  <small>Scroll down</small>
+<div class="scroll-down-guide">
+  <span class="chevron"></span>
 </div>
 
     
