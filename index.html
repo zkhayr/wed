@@ -1344,9 +1344,9 @@ document.getElementById('submitRSVP').addEventListener('click', async () => {
   
 });
 
-
-// Show success message
-  document.getElementById('rsvpSuccess').style.display = 'block';
+//Show success message with fade-in
+  const successMsg = document.getElementById('rsvpSuccess');
+  successMsg.classList.add('show');
 
   //hide the message after a few seconds
   setTimeout(() => {
