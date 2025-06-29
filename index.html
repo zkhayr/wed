@@ -1490,7 +1490,7 @@ function loadWishlist() {
       wishlistItems.innerHTML = '';
       snapshot.forEach(doc => {
         const data = doc.data();
-        console.log("Loaded item:", data); // ✅ Debug
+        console.log("Loaded item:", data); // Debug
 
         const li = document.createElement('li');
     li.innerHTML = `
@@ -1507,9 +1507,7 @@ function loadWishlist() {
                ${(data.reservedClientId === clientId || data.reservedBy === localStorage.getItem('myReservationName')) 
                   ? `<button onclick="cancelReservation('${doc.id}')" style="margin-top: 8px;">Cancel Reservation</button>` 
                   : ''}`
-            : `<p style="font-size: 0.9rem; color: #666; margin-top: 10px;">
-         <em>Note: Your name will be recorded upon reservation. Once the website closed, cancellations will no longer be available.</em>
-       </p>
+            : `
        <button onclick="reserveItem('${doc.id}', '${data.item}')" style="margin-top: 10px;">I want to buy for you</button>`
           }
         `;
@@ -1521,7 +1519,9 @@ function loadWishlist() {
   window.onload = loadWishlist;
 
   function reserveItem(id, itemName) {
-    const name = prompt(`Enter your name to reserve "${itemName}"`);
+    const name = prompt(`<p style="font-size: 0.9rem; color: #666; margin-top: 10px;">
+         <em>Note: Your name will be recorded upon reservation. Once the website closed, cancellations will no longer be available.</em>
+       </p>Enter your name to reserve "${itemName}"`);
     if (name) {
 
     console.log("Saving to Firestore:", {
