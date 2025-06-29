@@ -385,7 +385,36 @@
     cursor: pointer;
   }
 
+.wishlist-image-container {
+  position: relative;
+  display: inline-block;
+  margin-top: 8px;
+}
 
+.wishlist-image {
+  max-width: 200px;
+  border-radius: 8px;
+  display: block;
+}
+
+.click-overlay {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 6px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.wishlist-image-container:hover .click-overlay {
+  opacity: 1;
+}
 
 
         
@@ -1503,9 +1532,13 @@ function loadWishlist() {
     li.innerHTML = `
           <strong>${data.item}</strong><br>
           ${data.image && data.link
-            ? `<a href="${data.link}" target="_blank">
-                <img src="${data.image}" style="max-width: 200px; margin-top: 8px; border-radius: 8px;">
-               </a><br>`
+            ? `<div class="wishlist-image-container">
+                <a href="${data.link}" target="_blank">
+                <img src="${data.image}" class="wishlist-image" style="max-width: 200px; margin-top: 8px; border-radius: 8px;">
+               
+               <span class="click-overlay">Click here</span></a>
+               </div>
+               <br>`
             : data.image
               ? `<img src="${data.image}" style="max-width: 200px; margin-top: 8px; border-radius: 4px;"><br>`
               : ""}
@@ -1515,7 +1548,7 @@ function loadWishlist() {
                   ? `<button onclick="cancelReservation('${doc.id}')" style="margin-top: 8px;">Cancel Reservation</button>` 
                   : ''}`
             : `
-       <button onclick="reserveItem('${doc.id}', '${data.item}')" style="margin-top: 10px;">I want to buy for you</button>`
+       <button onclick="reserveItem('${doc.id}', '${data.item}')" style="margin-top: 10px;">Gift this item</button>`
           }
         `;
         wishlistItems.appendChild(li);
