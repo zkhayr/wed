@@ -314,11 +314,13 @@
 
 #rsvpSuccess {
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease-in-out;
+  pointer-events: none; /* prevent click when hidden */
 }
 
 #rsvpSuccess.show {
   opacity: 1;
+  pointer-events: auto;
 }
         
         
@@ -1354,14 +1356,14 @@ rsvpAttendanceInput.addEventListener('change', () => {
 });
       
 //Show success message with fade-in
-  const successMsg = document.getElementById('rsvpSuccess');
-  successMsg.classList.add('show');
+const successMsg = document.getElementById('rsvpSuccess');
+successMsg.classList.add('show'); // fades in
 
-  //hide the message after a few seconds
-  setTimeout(() => {
-    document.getElementById('rsvpSuccess').style.display = 'none';
-  }, 5000);
 
+//hides after beberapa sec
+setTimeout(() => {
+  successMsg.classList.remove('show'); // fades out after 5s
+}, 5000);
 
  
 
