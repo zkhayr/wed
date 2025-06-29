@@ -312,6 +312,15 @@
   display: none;
 }
 
+#rsvpSuccess {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+#rsvpSuccess.show {
+  opacity: 1;
+}
+        
         
 .calligraphy-text {
       position: absolute;
@@ -1063,6 +1072,10 @@ sebagai tanda penghargaan dan ingatan. </p>
 
                                 <i class="fa fa-pen me-2"></i>Submit RSVP</button>
 </a></div>
+<div id="rsvpSuccess" style="display: none; color: green; margin-top: 10px;">
+  Thank you for your RSVP!
+</div>
+        
     </div>
                 </div>
             </div>
@@ -1191,7 +1204,8 @@ document.getElementById('rsvpForm').addEventListener('submit', function(e) {
     const rsvpNameInput = document.getElementById('rsvpName');
     const rsvpAttendanceInput = document.getElementById('rsvpAttendance');
     const paxInput = document.getElementById('rsvpPax');
-    const rsvpNoteInput = document.getElementById('rsvpNote');  
+    const rsvpNoteInput = document.getElementById('rsvpNote'); 
+     
       
 
     let clientId = localStorage.getItem('clientId');
@@ -1330,15 +1344,14 @@ document.getElementById('submitRSVP').addEventListener('click', async () => {
   
 });
 
-rsvpAttendanceInput.addEventListener('change', () => {
-  if (rsvpAttendanceInput.value === 'yes') {
-    paxInput.style.display = 'block';
-  } else {
-    paxInput.style.display = 'none';
-    paxInput.value = '';
-  }
-});
 
+// Show success message
+  document.getElementById('rsvpSuccess').style.display = 'block';
+
+  //hide the message after a few seconds
+  setTimeout(() => {
+    document.getElementById('rsvpSuccess').style.display = 'none';
+  }, 5000);
       
 function openGate() {
 
