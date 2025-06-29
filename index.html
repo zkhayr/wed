@@ -913,8 +913,8 @@ sebagai tanda penghargaan dan ingatan. </p>
     <div class="appbar-nav animate__animated animate__slideInUp" style="display: none;">
         <ul>
             <li data-open="home">
-                <i class="fa fa-home"></i>
-                <span>Utama</span>
+                <i class="fa fa-gift"></i>
+                <span>Hadiah</span>
             </li>
             <li data-modal-target="contact">
                 <i class="fa fa-phone"></i>
@@ -1116,7 +1116,43 @@ sebagai tanda penghargaan dan ingatan. </p>
                                 <i class="fa fa-pen me-2"></i>Submit RSVP</button>
 </a></div>
 
+<!--untuk gift-->
+<div class="appbar-modal animate__animated animate__slideInUp animate__faster" data-modal="rsvp" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">RSVP</h5>
+                    <button type="button" class="btn-close btn-close-white" data-modal-action="close"></button>
+                </div>
+                <div class="modal-body">
 
+                    
+                    <div class="form-group mb-2">
+                                <div class="w-100 text-center mb-4">
+                                <div class="col-12">
+      
+                    <div id="rsvpSection">
+                        We'd love to know if you'll be joining us. Please complete this RSVP.   <p></p>  
+                     <input type="text" id="rsvpName" placeholder="Your Name" />
+                      <select id="rsvpAttendance">
+                        <option value="">Will you attend?</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                      </select>
+                    <input type="number" id="rsvpPax" min="1" max="3" placeholder="No. of Pax (max 3)" />
+                          <textarea id="rsvpNote" placeholder="Any message (optional)"></textarea>
+      <!--<button id="submitRSVP">Submit RSVP</button>-->
+                <div id="rsvpSuccess" style="color: green; margin-top: 5px;">
+                      Thank you for your RSVP!
+                </div>   
+                            <buttion id="submitRSVP">      
+                                        <a  class="btn btn-main w-100"  target="_blank">
+
+                                            <i class="fa fa-pen me-2"></i>Submit RSVP</button>
+                                        </a></div>
+
+
+            
 
 
 
