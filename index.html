@@ -1519,7 +1519,7 @@ function loadWishlist() {
   window.onload = loadWishlist;
 
   function reserveItem(id, itemName) {
-    alert("Note: Your name will be recorded upon reservation. Once the website is closed, cancellations will no longer be available.");
+    alert("Note: Your name will be recorded upon reservation. Once closed or refreshed, cancellations will no longer be available.");
       
     const name = prompt(`Enter your name to reserve "${itemName}"`);
     if (name) {
