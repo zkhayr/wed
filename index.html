@@ -1344,7 +1344,14 @@ document.getElementById('submitRSVP').addEventListener('click', async () => {
   
 });
 
-
+rsvpAttendanceInput.addEventListener('change', () => {
+  if (rsvpAttendanceInput.value === 'yes') {
+    paxInput.style.display = 'block';
+  } else {
+    paxInput.style.display = 'none';
+    paxInput.value = '';
+  }
+});
       
 //Show success message with fade-in
   const successMsg = document.getElementById('rsvpSuccess');
