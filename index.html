@@ -1500,7 +1500,7 @@ function loadWishlist() {
           ${data.image ? `<img src="${data.image}" style="max-width: 100px; margin-top: 8px;"><br>` : ""}
           ${data.reservedBy 
             ? `<em>Reserved by ${data.reservedBy}</em>`
-            : `<button onclick="reserveItem('${doc.id}', '${data.item}')">I want to buy for you</button>`
+            : `<button onclick="reserveItem('${doc.id}', '${data.item}')" style="margin-top: 10px;">I want to buy for you</button>`
           }
         `;
         wishlistItems.appendChild(li);
