@@ -1529,6 +1529,20 @@ function loadWishlist() {
       });
     }
   }
+function cancelReservation(id) {
+  if (confirm("Are you sure you want to cancel this reservation?")) {
+    db.collection('wishlists').doc(id).update({
+      reservedBy: "",
+      reservedClientId: ""
+    }).then(() => {
+      alert("Reservation cancelled.");
+      loadWishlist(); // refreshes the UI
+    }).catch((error) => {
+      console.error("Error cancelling reservation:", error);
+    });
+  }
+}
+      
       
 function openGate() {
 
