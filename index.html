@@ -1494,15 +1494,20 @@ function loadWishlist() {
 
         const li = document.createElement('li');
         li.innerHTML = `
-          <strong>${data.item}</strong><br>
-          ${data.link ? `<a href="${data.link}" target="_blank" style="color: #666;">
-            <i class="fas fa-link"></i> View Item</a><br>` : ""}
-          ${data.image ? `<img src="${data.image}" style="max-width: 200px; margin-top: 8px;"><br>` : ""}
-          ${data.reservedBy 
-            ? `<em>Reserved by ${data.reservedBy}</em>`
-            : `<button onclick="reserveItem('${doc.id}', '${data.item}')" style="margin-top: 10px;">I want to buy for you</button>`
-          }
-        `;
+  <strong>${data.item}</strong><br>
+  ${data.image && data.link
+    ? `<a href="${data.link}" target="_blank">
+         <img src="${data.image}" style="max-width: 100px; margin-top: 8px; border-radius: 8px;">
+       </a><br>`
+    : data.image 
+      ? `<img src="${data.image}" style="max-width: 200px; margin-top: 8px; border-radius: 8px;"><br>`
+      : ""}
+  ${data.reservedBy 
+    ? `<em>Reserved by ${data.reservedBy}</em><br>
+       <button onclick="cancelReservation('${doc.id}')" style="margin-top: 8px;">Cancel Reservation</button>`
+    : `<button onclick="reserveItem('${doc.id}', '${data.item}')" style="margin-top: 10px;">I want to buy for you</button>`
+  }
+`;
         wishlistItems.appendChild(li);
       });
     });
