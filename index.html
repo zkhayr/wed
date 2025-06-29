@@ -1507,7 +1507,10 @@ function loadWishlist() {
                ${(data.reservedClientId === clientId || data.reservedBy === localStorage.getItem('myReservationName')) 
                   ? `<button onclick="cancelReservation('${doc.id}')" style="margin-top: 8px;">Cancel Reservation</button>` 
                   : ''}`
-            : `<button onclick="reserveItem('${doc.id}', '${data.item}')" style="margin-top: 10px;">I want to buy for you</button>`
+            : `<p style="font-size: 0.9rem; color: #666; margin-top: 10px;">
+         <em>Note: Your name will be recorded upon reservation. Once the website closed, cancellations will no longer be available.</em>
+       </p>
+       <button onclick="reserveItem('${doc.id}', '${data.item}')" style="margin-top: 10px;">I want to buy for you</button>`
           }
         `;
         wishlistItems.appendChild(li);
