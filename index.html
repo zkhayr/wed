@@ -1493,21 +1493,23 @@ function loadWishlist() {
         console.log("Loaded item:", data); // ✅ Debug
 
         const li = document.createElement('li');
-        li.innerHTML = `
-  <strong>${data.item}</strong><br>
-  ${data.image && data.link
-    ? `<a href="${data.link}" target="_blank">
-         <img src="${data.image}" style="max-width: 100px; margin-top: 8px; border-radius: 8px;">
-       </a><br>`
-    : data.image 
-      ? `<img src="${data.image}" style="max-width: 200px; margin-top: 8px; border-radius: 8px;"><br>`
-      : ""}
-  ${data.reservedBy 
-    ? `<em>Reserved by ${data.reservedBy}</em><br>
-       <button onclick="cancelReservation('${doc.id}')" style="margin-top: 8px;">Cancel Reservation</button>`
-    : `<button onclick="reserveItem('${doc.id}', '${data.item}')" style="margin-top: 10px;">I want to buy for you</button>`
-  }
-`;
+    li.innerHTML = `
+          <strong>${data.item}</strong><br>
+          ${data.image && data.link
+            ? `<a href="${data.link}" target="_blank">
+                <img src="${data.image}" style="max-width: 200px; margin-top: 8px; border-radius: 8px;">
+               </a><br>`
+            : data.image
+              ? `<img src="${data.image}" style="max-width: 200px; margin-top: 8px; border-radius: 8px;"><br>`
+              : ""}
+          ${data.reservedBy 
+            ? `<em>Reserved by ${data.reservedBy}</em><br>
+               ${data.reservedClientId === clientId 
+                  ? `<button onclick="cancelReservation('${doc.id}')" style="margin-top: 8px;">Cancel Reservation</button>` 
+                  : ''}`
+            : `<button onclick="reserveItem('${doc.id}', '${data.item}')" style="margin-top: 10px;">I want to buy for you</button>`
+          }
+        `;
         wishlistItems.appendChild(li);
       });
     });
@@ -1518,7 +1520,10 @@ function loadWishlist() {
   function reserveItem(id, itemName) {
     const name = prompt(`Enter your name to reserve "${itemName}"`);
     if (name) {
-      db.collection('wishlists').doc(id).update({ reservedBy: name }).then(() => {
+      db.collection('wishlists').doc(id).update({ 
+        reservedBy: name, 
+        reservedClientId: clientId 
+      }).then(() => {
         alert("Item reserved!");
         loadWishlist();
       });
