@@ -1519,9 +1519,9 @@ function loadWishlist() {
   window.onload = loadWishlist;
 
   function reserveItem(id, itemName) {
-    const name = prompt(`<p style="font-size: 0.9rem; color: #666; margin-top: 10px;">
-         <em>Note: Your name will be recorded upon reservation. Once the website closed, cancellations will no longer be available.</em>
-       </p>Enter your name to reserve "${itemName}"`);
+    alert("Note: Your name will be recorded upon reservation. Once the website is closed, cancellations will no longer be available.");
+      
+    const name = prompt(`Enter your name to reserve "${itemName}"`);
     if (name) {
 
     console.log("Saving to Firestore:", {
