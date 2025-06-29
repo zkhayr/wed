@@ -339,7 +339,37 @@
        transition: opacity 1s ease; /* Smooth fade */
     }
 
+.scroll-guide {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #E4D6CC; /* nude/gold tone */
+  font-family: 'Cormorant', serif;
+  opacity: 0;
+  animation: fadeBounce 3s ease-in-out 1;
+}
 
+.scroll-guide .arrow {
+  font-size: 24px;
+  display: block;
+  animation: bounce 1.5s infinite;
+}
+
+/* Main entrance animation */
+@keyframes fadeBounce {
+  0% { opacity: 0; transform: translate(-50%, 20px); }
+  30% { opacity: 1; transform: translate(-50%, 0); }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Repeating bounce for the arrow */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
 
     @keyframes pulse {
       0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
@@ -406,6 +436,9 @@
     <img src="https://zkhayr.github.io/wed/asset/theme/whimsical/bg1.webp" alt="Wedding Invitation" height="600">
   </div>
 </div>
+
+
+
     
     <!--<div class="main-container">-->
         <div class="main-particles" id="main-particles" data-aos="fade-down" data-aos-delay="1000" data-aos-duration="2500"></div>
@@ -517,6 +550,12 @@
 <div data-aos="fade-down" data-aos-delay="0" data-aos-duration="4000">
 <img src="https://zkhayr.github.io/wed/asset/theme/whimsical/bg1.webp" alt="Wedding Invitation" height="600">
 </div>
+
+<div id="scrollGuide" class="scroll-guide">
+  <span class="arrow">↓</span>
+  <small>Scroll down</small>
+</div>
+
     
 <div class="sub-page">
     <div class="sub-particles" id="sub-particles"></div>
@@ -1393,6 +1432,13 @@ function openGate() {
   
   }
 
+setTimeout(() => {
+  const guide = document.getElementById('scrollGuide');
+  if (guide) guide.style.display = 'none';
+}, 4000); // hides after 4 seconds
+
+
+      
       
   </script>
 
