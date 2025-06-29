@@ -308,6 +308,11 @@
   border: 1px solid #1B1821;
 }
 
+#rsvpPax {
+  display: none;
+}
+
+        
 .calligraphy-text {
       position: absolute;
       top: 58%;
@@ -1325,7 +1330,14 @@ document.getElementById('submitRSVP').addEventListener('click', async () => {
   
 });
 
-
+rsvpAttendanceInput.addEventListener('change', () => {
+  if (rsvpAttendanceInput.value === 'yes') {
+    paxInput.style.display = 'block';
+  } else {
+    paxInput.style.display = 'none';
+    paxInput.value = '';
+  }
+});
 
       
 function openGate() {
