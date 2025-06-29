@@ -357,6 +357,33 @@
   animation: bounce 1.5s infinite;
 }
 
+ #wishlistItems {
+    list-style: none;
+    padding: 0;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  #wishlistItems li {
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    font-family: 'Cormorant', serif;
+  }
+  button {
+    background: #1B1821;
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+
+
+
+        
 /* Main entrance animation */
 @keyframes fadeBounce {
   0% { opacity: 0; transform: translate(-50%, 20px); }
@@ -1128,6 +1155,13 @@ sebagai tanda penghargaan dan ingatan. </p>
                            <i class="fa fa-download"></i> Download QR</a> 
                             <img id="qrImage" src="https://zkhayr.github.io/wed/asset/image/yanaqr.jpeg" alt="QR Duit Kahwin" width="200" style="display: none;>
  
+                                
+                                <section id="wishlistSection">
+                      <h2>Our Wishlist</h2>
+                      <ul id="wishlistItems">
+                        <!-- Items will be loaded here -->
+                      </ul>
+                            </section>
                            
                 </div>
                  </div>
@@ -1259,6 +1293,7 @@ document.getElementById('rsvpForm').addEventListener('submit', function(e) {
     const rsvpAttendanceInput = document.getElementById('rsvpAttendance');
     const paxInput = document.getElementById('rsvpPax');
     const rsvpNoteInput = document.getElementById('rsvpNote'); 
+     const wishlistItems = document.getElementById('wishlistItems');  
      
       
 
@@ -1436,7 +1471,28 @@ rsvpAttendanceInput.addEventListener('change', () => {
   }
 });
       
- 
+ function loadWishlist() {
+  db.collection('wishlists').get().then(snapshot => {
+    wishlistItems.innerHTML = ''; // clear existing
+    snapshot.forEach(doc => {
+      const item = doc.data();
+      const li = document.createElement('li');
+
+      li.innerHTML = `
+        <strong>${item.item}</strong><br>
+        ${item.link ? `<a href="${item.link}" target="_blank" style="color: #666;">
+          <i class="fas fa-link"></i> View Item</a><br>` : ""}
+        ${item.image ? `<img src="${item.image}" style="max-width: 100px; margin-top: 8px;"><br>` : ""}
+        ${item.reservedBy 
+          ? `<em>Reserved by ${item.reservedBy}</em>`
+          : `<button onclick="reserveItem('${doc.id}', '${item.item}')">Saya nak belikan</button>`
+        }
+      `;
+
+      wishlistItems.appendChild(li);
+    });
+  });
+}
       
 function openGate() {
 
