@@ -438,6 +438,47 @@
   border-radius: 10px;
   border: none;
 }
+
+
+#countdown-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.countdown-box {
+  display: flex;
+  gap: 12px;
+  text-align: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.countdown-box div {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #f8f8f8;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  min-width: 60px;
+}
+
+.countdown-box span {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.countdown-box small {
+  font-size: 0.75rem;
+  color: #666;
+}
+
+
+
+
+        
 /* Only apply right padding on larger screens */
 @media (min-width: 768px) {
   .modal-body {
@@ -788,12 +829,25 @@
                     </div>
     </div>
 
-    <div class="container container-countdown">
+    <!--<div class="container container-countdown">
         <div data-aos="zoom-in" data-aos-delay="0" data-aos-duration="1000">
             <h4 class="mb-4">COUNTDOWN</h4>
             <div class="flipdown m-auto mb-3" id="flipdown"></div>
         </div>
-    </div>
+    </div>-->
+
+<div id="countdown-container">
+  <div class="countdown-box">
+    <div><span id="months">0</span><small>Months / Bulan</small></div>
+    <div><span id="days">0</span><small>Days / Hari</small></div>
+    <div><span id="hours">0</span><small>Hours / Jam</small></div>
+    <div><span id="minutes">0</span><small>Mins / Minit</small></div>
+    <div><span id="seconds">0</span><small>Secs / Saat</small></div>
+  </div>
+</div>
+
+    
+    
 
             <div class="container container-gallery">
             <div data-aos="fade-down" data-aos-delay="0" data-aos-duration="1000">
@@ -1668,7 +1722,29 @@ setTimeout(() => {
   if (guide) guide.style.display = 'none';
 }, 4000); // hides after 4 seconds
 
+const endDate = new Date("2025-10-04T00:00:00").getTime(); // 4 October 2025
 
+  function updateCountdown() {
+    const now = new Date().getTime();
+    let diff = endDate - now;
+
+    if (diff < 0) diff = 0;
+
+    const months = Math.floor(diff / (1000 * 60 * 60 * 24 * 30.44)); // average month
+    const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 30.44)) / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    document.getElementById("months").textContent = months;
+    document.getElementById("days").textContent = days;
+    document.getElementById("hours").textContent = hours;
+    document.getElementById("minutes").textContent = minutes;
+    document.getElementById("seconds").textContent = seconds;
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
       
       
   </script>
