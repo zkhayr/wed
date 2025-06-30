@@ -418,7 +418,7 @@
 .modal-body {
   max-height: 70vh;
   overflow-y: auto;
-  padding-right: 6px; /* avoids hiding content under scrollbar */
+  padding-right: 0; /* avoids hiding content under scrollbar */
   scrollbar-width: thin;            /* Firefox */
   scrollbar-color: #ccc transparent; /* Firefox */
   -webkit-overflow-scrolling: touch; /* for iOS smooth scroll */  
@@ -438,7 +438,12 @@
   border-radius: 10px;
   border: none;
 }
-
+/* Only apply right padding on larger screens */
+@media (min-width: 768px) {
+  .modal-body {
+    padding-right: 6px;
+  }
+}
 
         
 @keyframes bounce {
