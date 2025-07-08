@@ -475,7 +475,23 @@
   color: #666;
 }
 
-
+#musicIcon {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+#musicIcon:hover {
+  opacity: 1;
+}
+#musicIcon svg {
+  width: 24px;
+  height: 24px;
+}
 
 
         
@@ -886,22 +902,22 @@
                             </div>
                         </div>
                                             <div class="item">
-                            <div class="image" style="background-image: url('https://www.thekahwin.my/assets/img/dummy/dummy2.webp')" data-image="2">
+                            <div class="image" style="background-image: url('https://zkhayr.github.io/wed/asset/image/img1.webp')" data-image="2">
 
                             </div>
                         </div>
                                             <div class="item">
-                            <div class="image" style="background-image: url('https://www.thekahwin.my/assets/img/dummy/dummy3.webp')" data-image="3">
+                            <div class="image" style="background-image: url('https://zkhayr.github.io/wed/asset/image/img1.webp')" data-image="3">
 
                             </div>
                         </div>
                                             <div class="item">
-                            <div class="image" style="background-image: url('https://www.thekahwin.my/assets/img/dummy/dummy4.webp')" data-image="4">
+                            <div class="image" style="background-image: url('https://zkhayr.github.io/wed/asset/image/img1.webp')" data-image="4">
 
                             </div>
                         </div>
                                             <div class="item">
-                            <div class="image" style="background-image: url('https://www.thekahwin.my/assets/img/dummy/dummy5.webp')" data-image="5">
+                            <div class="image" style="background-image: url('https://zkhayr.github.io/wed/asset/image/img1.webp')" data-image="5">
 
                             </div>
                         </div>
@@ -1294,7 +1310,7 @@ Thank you for your prayers and kindness.</em>  <p></p>
                                     <br><h2 style="margin-top: 20px;">Cadangan hadiah buat pengantin</h2>
                                     <h3><em>Gift Wishlist for the Couple</em></h3>
                                     
-                                    <ul id="wishlistItems" class="wishlistItems" style="margin-top: 20px;">
+                                    <ul id="wishlistItems" style="margin-top: 20px;">
                                         <!-- Items will be loaded here -->
                                           </ul>
                               </section>
@@ -1318,8 +1334,8 @@ Thank you for your prayers and kindness.</em>  <p></p>
 
                                 
 
-<div class="modal-backdrop" style="display: absolute;"></div>
-    <div class="music-bar d-none">
+<div class="modal-backdrop" style="display: none;"></div>
+   <!-- <div class="music-bar d-none">
                     <audio id="audioFrame" loop>
                 <source src="https://zkhayr.github.io/wed/asset/music/videoplayback.m4a" type="audio/x-m4a">
                 Your browser does not support the audio element.
@@ -1332,8 +1348,18 @@ Thank you for your prayers and kindness.</em>  <p></p>
                     <i class="fa fa-play"></i>
                 </div>
                     </div>
-    </div>
+    </div>-->
 
+    <!-- Music Toggle Button -->
+<div id="musicIcon"></div>
+
+<!-- Background Audio -->
+<audio id="weddingAudio" loop>
+  <source src="https://zkhayr.github.io/wed/asset/music/videoplayback.m4a" type="audio/x-m4a">
+</audio>
+
+
+    
         
     
     <input type="hidden" name="asset_url" value="https://zkhayr.github.io/wed/asset/theme/whimsical/">
@@ -1746,6 +1772,38 @@ const endDate = new Date("2025-10-04T00:00:00").getTime(); // 4 October 2025
 
   updateCountdown();
   setInterval(updateCountdown, 1000);
+
+
+      //music
+    const musicIcon = document.getElementById("musicIcon");
+const music = document.getElementById("weddingAudio");
+
+const playSVG = `
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+</svg>`;
+
+const pauseSVG = `
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+  <rect x="6" y="4" width="4" height="16"></rect>
+  <rect x="14" y="4" width="4" height="16"></rect>
+</svg>`;
+
+// Set initial state to paused (show play icon)
+musicIcon.innerHTML = playSVG;
+
+musicIcon.addEventListener("click", () => {
+  if (music.paused) {
+    music.play();
+    musicIcon.innerHTML = pauseSVG;
+  } else {
+    music.pause();
+    musicIcon.innerHTML = playSVG;
+  }
+});
+
+
+
       
       
   </script>
