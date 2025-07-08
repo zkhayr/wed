@@ -1740,7 +1740,11 @@ function openGate() {
   // After fade is done (e.g. 1s), hide it completely
   setTimeout(() => {
     gateText.style.display = "none";
-  }, 1000); // Matches the CSS transition time (1s)
+  }, 1000);
+    document.getElementById("musicIcon").style.display = "block";
+    music.play(); // Start audio
+    musicIcon.innerHTML = pauseSVG; // Show pause icon
+  }, 1000);// Matches the CSS transition time (1s)
   
   }
 
