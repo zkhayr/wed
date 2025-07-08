@@ -1294,7 +1294,7 @@ Thank you for your prayers and kindness.</em>  <p></p>
                                     <br><h2 style="margin-top: 20px;">Cadangan hadiah buat pengantin</h2>
                                     <h3><em>Gift Wishlist for the Couple</em></h3>
                                     
-                                    <ul id="wishlistItems" style="margin-top: 20px">
+                                    <ul id="wishlistItems" style="margin-top: 20px;">
                                         <!-- Items will be loaded here -->
                                           </ul>
                               </section>
@@ -1313,7 +1313,7 @@ Thank you for your prayers and kindness.</em>  <p></p>
                 </div>
             </div>
         </div>
-   
+</div>
 
 
                                 
@@ -1438,6 +1438,7 @@ document.getElementById('rsvpForm').addEventListener('submit', function(e) {
     const rsvpAttendanceInput = document.getElementById('rsvpAttendance');
     const paxInput = document.getElementById('rsvpPax');
     const rsvpNoteInput = document.getElementById('rsvpNote'); 
+    const wishlistItems = document.getElementById('wishlistItems');  
  
      
       
@@ -1617,7 +1618,7 @@ rsvpAttendanceInput.addEventListener('change', () => {
 });
 
 
-const wishlistItems = document.getElementById('wishlistItems');       
+       
 function loadWishlist() {
     console.log("Loading wishlist...");
     db.collection('wishlists').get().then(snapshot => {
