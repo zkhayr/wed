@@ -1437,258 +1437,205 @@ document.getElementById('rsvpForm').addEventListener('submit', function(e) {
 </script>
     
 <!-- Firebase SDK -->
-  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"> </script>
-     <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
- 
+ <!-- ✅ Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
 
+  <!-- ✅ Your Firebase JS code -->
   <script>
-    // 🔧 Your Firebase Config
-    const firebaseConfig = {
-       apiKey: "AIzaSyAyXoBcnGabIuKSaCjso_hA5CsCDqKnNek",
-  authDomain: "wedding-guestbook-2086a.firebaseapp.com",
-  projectId: "wedding-guestbook-2086a",
-  storageBucket: "wedding-guestbook-2086a.firebasestorage.app",
-  messagingSenderId: "54243617499",
-  appId: "1:54243617499:web:bde886a3be0540492dfafe",
-  measurementId: "G-CW3N7JZ6NT"
-    };
+    window.addEventListener('DOMContentLoaded', () => {
 
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore();
+      const firebaseConfig = {
+        apiKey: "AIzaSyAyXoBcnGabIuKSaCjso_hA5CsCDqKnNek",
+        authDomain: "wedding-guestbook-2086a.firebaseapp.com",
+        projectId: "wedding-guestbook-2086a",
+        storageBucket: "wedding-guestbook-2086a.firebasestorage.app",
+        messagingSenderId: "54243617499",
+        appId: "1:54243617499:web:bde886a3be0540492dfafe",
+        measurementId: "G-CW3N7JZ6NT"
+      };
 
-    const nameInput = document.getElementById('name');
-    const wishInput = document.getElementById('wish');
-    const submitBtn = document.getElementById('submitWish');
-    const wishesList = document.getElementById('wishesList');
-    const nextPageBtn = document.getElementById('nextPage');
-    const prevPageBtn = document.getElementById('prevPage');
-    const rsvpNameInput = document.getElementById('rsvpName');
-    const rsvpAttendanceInput = document.getElementById('rsvpAttendance');
-    const paxInput = document.getElementById('rsvpPax');
-    const rsvpNoteInput = document.getElementById('rsvpNote'); 
-    const wishlistItems = document.getElementById('wishlistItems');  
- 
-     
-      
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
 
-    let clientId = localStorage.getItem('clientId');
-    if (!clientId) {
-      clientId = 'client-' + Math.random().toString(36).substr(2, 9);
-      localStorage.setItem('clientId', clientId);
-    }
+      const nameInput = document.getElementById('name');
+      const wishInput = document.getElementById('wish');
+      const submitBtn = document.getElementById('submitWish');
+      const wishesList = document.getElementById('wishesList');
+      const nextPageBtn = document.getElementById('nextPage');
+      const prevPageBtn = document.getElementById('prevPage');
+      const rsvpNameInput = document.getElementById('rsvpName');
+      const rsvpAttendanceInput = document.getElementById('rsvpAttendance');
+      const paxInput = document.getElementById('rsvpPax');
+      const rsvpNoteInput = document.getElementById('rsvpNote'); 
+      const wishlistItems = document.getElementById('wishlistItems');
 
-    const pageSize = 3;
-    let lastVisible = null;
-    let firstVisible = null;
-    let pages = [];
-
-    async function loadWishes(direction = 'next') {
-      let query = db.collection('wishes').orderBy('timestamp', 'desc').limit(pageSize);
-
-      if (direction === 'next' && lastVisible) {
-        query = query.startAfter(lastVisible);
-      } else if (direction === 'prev' && pages.length > 1) {
-        const previousCursor = pages[pages.length - 2];
-        query = db.collection('wishes').orderBy('timestamp', 'desc').startAt(previousCursor).limit(pageSize);
-        pages.pop();
+      let clientId = localStorage.getItem('clientId');
+      if (!clientId) {
+        clientId = 'client-' + Math.random().toString(36).substr(2, 9);
+        localStorage.setItem('clientId', clientId);
       }
 
-      const snapshot = await query.get();
+      const pageSize = 3;
+      let lastVisible = null;
+      let firstVisible = null;
+      let pages = [];
 
-      if (!snapshot.empty) {
-        wishesList.innerHTML = '';
-        snapshot.forEach(doc => {
-          const data = doc.data();
-          const div = document.createElement('div');
-          div.className = 'wish';
-          div.innerHTML = `<strong>${escapeHtml(data.name)}</strong><p>${escapeHtml(data.wish)}</p>`;
+      async function loadWishes(direction = 'next') {
+        let query = db.collection('wishes').orderBy('timestamp', 'desc').limit(pageSize);
 
-          if (data.clientId === clientId) {
-            const btn = document.createElement('button');
-            btn.className = 'deleteBtn';
-            btn.textContent = '🗑️';
-            btn.onclick = () => {
-              if (confirm('Delete your wish?')) {
-                db.collection('wishes').doc(doc.id).delete();
-              }
-            };
-            div.appendChild(btn);
-          }
+        if (direction === 'next' && lastVisible) {
+          query = query.startAfter(lastVisible);
+        } else if (direction === 'prev' && pages.length > 1) {
+          const previousCursor = pages[pages.length - 2];
+          query = db.collection('wishes').orderBy('timestamp', 'desc').startAt(previousCursor).limit(pageSize);
+          pages.pop();
+        }
 
-          wishesList.appendChild(div);
+        const snapshot = await query.get();
+
+        if (!snapshot.empty) {
+          wishesList.innerHTML = '';
+          snapshot.forEach(doc => {
+            const data = doc.data();
+            const div = document.createElement('div');
+            div.className = 'wish';
+            div.innerHTML = `<strong>${escapeHtml(data.name)}</strong><p>${escapeHtml(data.wish)}</p>`;
+
+            if (data.clientId === clientId) {
+              const btn = document.createElement('button');
+              btn.className = 'deleteBtn';
+              btn.textContent = '🗑️';
+              btn.onclick = () => {
+                if (confirm('Delete your wish?')) {
+                  db.collection('wishes').doc(doc.id).delete();
+                }
+              };
+              div.appendChild(btn);
+            }
+
+            wishesList.appendChild(div);
+          });
+
+          firstVisible = snapshot.docs[0];
+          lastVisible = snapshot.docs[snapshot.docs.length - 1];
+          if (direction === 'next') pages.push(firstVisible);
+        }
+
+        prevPageBtn.disabled = pages.length <= 1;
+        nextPageBtn.disabled = snapshot.size < pageSize;
+      }
+
+      submitBtn.addEventListener('click', async () => {
+        const name = nameInput.value.trim();
+        const wish = wishInput.value.trim();
+        if (!name || !wish) return alert('Please enter name and wish');
+
+        await db.collection('wishes').add({
+          name,
+          wish,
+          clientId,
+          timestamp: firebase.firestore.FieldValue.serverTimestamp()
         });
 
-        firstVisible = snapshot.docs[0];
-        lastVisible = snapshot.docs[snapshot.docs.length - 1];
-        if (direction === 'next') pages.push(firstVisible);
-      }
-
-      // Update buttons
-      prevPageBtn.disabled = pages.length <= 1;
-      nextPageBtn.disabled = snapshot.size < pageSize;
-    }
-
-    submitBtn.addEventListener('click', async () => {
-      const name = nameInput.value.trim();
-      const wish = wishInput.value.trim();
-      if (!name || !wish) return alert('Please enter name and wish');
-
-      await db.collection('wishes').add({
-        name,
-        wish,
-        clientId,
-        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        nameInput.value = '';
+        wishInput.value = '';
+        pages = [];
+        lastVisible = null;
+        loadWishes();
       });
 
-      nameInput.value = '';
-      wishInput.value = '';
-      pages = [];
-      lastVisible = null;
+      nextPageBtn.onclick = () => loadWishes('next');
+      prevPageBtn.onclick = () => loadWishes('prev');
+
+      function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+      }
+
       loadWishes();
-    });
 
-    nextPageBtn.onclick = () => loadWishes('next');
-    prevPageBtn.onclick = () => loadWishes('prev');
+      document.getElementById('submitRSVP').addEventListener('click', async () => {
+        const name = rsvpNameInput.value.trim();
+        const attending = rsvpAttendanceInput.value;
+        const pax = parseInt(paxInput.value);
+        const note = rsvpNoteInput.value.trim();
 
-    function escapeHtml(text) {
-      const div = document.createElement('div');
-      div.textContent = text;
-      return div.innerHTML;
-    }
+        if (!name || !attending) return alert('Please enter your name and attendance status.');
+        if (attending === 'yes' && (isNaN(pax) || pax < 1 || pax > 3)) {
+          return alert('Please enter a valid number of pax (1 to 3).');
+        }
 
-    
+        await db.collection('rsvps').add({
+          name,
+          attending,
+          pax: attending === 'yes' ? pax : 0,
+          note,
+          timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        });
 
-    // Load first page on start
-    loadWishes();
+        const successMsg = document.getElementById('rsvpSuccess');
+        successMsg.classList.add('show');
 
-       function downloadQR() {
-      const qr = document.getElementById('qrImage');
-      const link = document.createElement('a');
-      link.href = qr.src;
-      link.download = 'yanaqr.jpeg';//kena ubah
-      link.click();
-    document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-         
-    }
+        setTimeout(() => {
+          successMsg.classList.remove('show');
+        }, 5000);
 
-  
+        rsvpNameInput.value = '';
+        rsvpAttendanceInput.value = '';
+        paxInput.value = '';
+        rsvpNoteInput.value = '';
+      });
+
+      rsvpAttendanceInput.addEventListener('change', () => {
+        if (rsvpAttendanceInput.value === 'yes') {
+          paxInput.style.display = 'block';
+        } else {
+          paxInput.style.display = 'none';
+          paxInput.value = '';
+        }
+      });
+
+      function loadWishlist() {
+        db.collection('wishlists').get().then(snapshot => {
+          wishlistItems.innerHTML = '';
+          snapshot.forEach(doc => {
+            const data = doc.data();
+            const li = document.createElement('li');
+            li.innerHTML = `
+              <strong>${data.item}</strong><br>
+              ${data.image ? `<img src="${data.image}" style="max-width: 200px;">` : ''}
+              ${data.reservedBy
+                ? `<em>Reserved by ${data.reservedBy}</em>`
+                : `<button onclick="reserveItem('${doc.id}', '${data.item}')">Reserve this item</button>`}
+            `;
+            wishlistItems.appendChild(li);
+          });
+        });
+      }
+
+      window.loadWishlist = loadWishlist;
+      window.reserveItem = function(id, itemName) {
+        const name = prompt(`Enter your name to reserve "${itemName}"`);
+        if (name) {
+          db.collection('wishlists').doc(id).update({
+            reservedBy: name,
+            reservedClientId: clientId
+          }).then(() => {
+            alert("Item reserved!");
+            loadWishlist();
+          });
+        }
+      }
+
+      loadWishlist();
+
+
+
 
 
       
-    function copyAccount() {
-      const accNum = document.getElementById('accNum').textContent;
-      navigator.clipboard.writeText(accNum).then(() => {
-        alert("Nombor akaun telah disalin!");
-      }).catch(err => {
-        alert("Gagal salin nombor akaun.");
-      });
-    }
-
-
-document.getElementById('submitRSVP').addEventListener('click', async () => {
-  const name = rsvpNameInput.value.trim();
-  const attending = rsvpAttendanceInput.value;
-  const pax = parseInt(paxInput.value);
-    const note = rsvpNoteInput.value.trim();
-  
-
-  if (!name || !attending) return alert('Please enter your name and attendance status.');
-  if (attending === 'yes' && (isNaN(pax) || pax < 1 || pax > 3)) {
-    return alert('Please enter a valid number of pax (1 to 3).');
-  }
-
-  await db.collection('rsvps').add({
-    name,
-    attending,
-    pax: attending === 'yes' ? pax : 0, // if not attending, pax is 0
-    note,
-      timestamp: firebase.firestore.FieldValue.serverTimestamp()
-  });
-
-
-
-    
-
-
-
- // Simulate successful RSVP submission
-  console.log('RSVP submitted:', { name, attending, pax, note });
-    
-//Show success message with fade-in
-const successMsg = document.getElementById('rsvpSuccess');
-successMsg.classList.add('show'); // fades in
-
-
-//hides after beberapa sec
-setTimeout(() => {
-  successMsg.classList.remove('show'); // fades out after 5s
-}, 5000);
-
-
-
-  // Clear fields
-  rsvpNameInput.value = '';
-  rsvpAttendanceInput.value = '';
-  paxInput.value = '';
-    rsvpNoteInput.value = '';
-  
-});
-
-rsvpAttendanceInput.addEventListener('change', () => {
-  if (rsvpAttendanceInput.value === 'yes') {
-    paxInput.style.display = 'block';
-  } else {
-    paxInput.style.display = 'none';
-    paxInput.value = '';
-  }
-});
-
-
-       
-function loadWishlist() {
-    console.log("Loading wishlist...");
-    db.collection('wishlists').get().then(snapshot => {
-      wishlistItems.innerHTML = '';
-      snapshot.forEach(doc => {
-        const data = doc.data();
-        console.log("Loaded item:", data); // Debug
-
-        const li = document.createElement('li');
-    li.innerHTML = `
-          <strong>${data.item}</strong><br>
-          ${data.image && data.link
-            ? `<div class="wishlist-image-container" style="margin-top: 8px;">
-                <a href="${data.link}" target="_blank">
-                <img src="${data.image}" class="wishlist-image" style="max-width: 200px; margin-top: 8px; border-radius: 8px;">
-               
-               <span class="click-overlay">View Item</span></a>
-               </div>
-               <br>`
-            : data.image
-              ? `<img src="${data.image}" style="max-width: 200px; margin-top: 8px; border-radius: 4px;"><br>`
-              : ""}
-          ${data.reservedBy 
-            ? `<em>Reserved by ${data.reservedBy}</em><br>
-               ${(data.reservedClientId === clientId || data.reservedBy === localStorage.getItem('myReservationName')) 
-                  ? `<button onclick="cancelReservation('${doc.id}')" style="margin-top: 8px;">Cancel Reservation</button>` 
-                  : ''}`
-            : `
-       <button onclick="reserveItem('${doc.id}', '${data.item}')" style="margin-top: 10px;">Reserve this item</button>`
-          }
-        `;
-        wishlistItems.appendChild(li);
-      });
-    });
-  }
-
-  window.onload = loadWishlist;
-    window.addEventListener('pageshow', function (event) {
-  if (event.persisted || performance.getEntriesByType("navigation")[0].type === "back_forward") {
-    loadWishlist();
-  }
-});  
 
   function reserveItem(id, itemName) {
     alert("Note: Your name will be recorded upon reservation. Once closed or refreshed, cancellations will no longer be available.");
@@ -1722,7 +1669,7 @@ function cancelReservation(id) {
     });
   }
 }
-      
+       }); // END DOMContentLoaded   
       
 function openGate() {
 
