@@ -1486,28 +1486,7 @@ Thank you for your prayers and kindness.</em>  <p></p>
     <!-- Card Scripts -->
             <script src="https://zkhayr.github.io/wed/asset/theme/whimsical/script.js?v=1748917788"></script>
     
-        <script>
-document.getElementById('rsvpForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  
-  const data = {
-    name: this.name.value,
-    email: this.email.value,
-    message: this.message.value
-  };
-
-  fetch('https://hook.eu2.make.com/5hec4wbdl2imdso3ukeoemdmgbr5nfey', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data)
-  })
-  .then(() => {
-    alert("Thank you! Your message was sent 🎉");
-    this.reset();
-  })
-  .catch(() => alert("Oops! Something went wrong."));
-});
-</script>
+ 
     
 <!-- Firebase SDK -->
  <!-- Firebase SDKs -->
@@ -1528,59 +1507,7 @@ document.getElementById('rsvpForm').addEventListener('submit', function(e) {
         measurementId: "G-CW3N7JZ6NT"
       };
 
-         firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore();
-
-    const nameInput = document.getElementById('name');
-    const wishInput = document.getElementById('wish');
-    const submitBtn = document.getElementById('submitWish');
-    const wishesList = document.getElementById('wishesList');
-
-    function escapeHtml(text) {
-      const div = document.createElement('div');
-      div.textContent = text;
-      return div.innerHTML;
-    }
-
-    async function loadWishes() {
-      wishesList.innerHTML = '';
-      const snapshot = await db.collection('wishes').orderBy('timestamp', 'desc').get();
-      snapshot.forEach(doc => {
-        const data = doc.data();
-        const div = document.createElement('div');
-        div.className = 'wish';
-        div.innerHTML = `
-          <strong>${escapeHtml(data.name)}</strong>
-          <p>${escapeHtml(data.wish)}</p>
-        `;
-        wishesList.appendChild(div);
-      });
-    }
-
-    submitBtn.addEventListener('click', async () => {
-      const name = nameInput.value.trim();
-      const wish = wishInput.value.trim();
-
-      if (!name || !wish) {
-        alert('Please fill in both fields!');
-        return;
-      }
-
-      await db.collection('wishes').add({
-        name,
-        wish,
-        timestamp: firebase.firestore.FieldValue.serverTimestamp()
-      });
-
-      nameInput.value = '';
-      wishInput.value = '';
-      loadWishes();
-    });
-
-    // Initial load
-    loadWishes();
-  });
-
+         
         
 
       /*---------------------------------------
@@ -1805,42 +1732,63 @@ function cancelReservation(id) {
 
 
         
-function openGate() {
 
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
 
- 
-   document.getElementById('leftDoor').style.transform = 'translateX(-100%)';
-    document.getElementById('rightDoor').style.transform = 'translateX(100%)';
-   document.getElementById('invitation').style.opacity = 1;
-     document.getElementById('gateText').style.display = 1; // hide calligraphy after opening
-  document.getElementById('waxFull').classList.add('fade-out-down');
+  const nameInput = document.getElementById('name');
+  const wishInput = document.getElementById('wish');
+  const submitBtn = document.getElementById('submitWish');
+  const wishesList = document.getElementById('wishesList');
 
-
-   // Fade out the text smoothly
-  const gateText = document.getElementById('gateText');
-  gateText.classList.add('fade-out');
-
-  // After fade is done (e.g. 1s), hide it completely
-  setTimeout(() => {
-    gateText.style.display = "none";
-  }, 1000);
-    document.getElementById("musicIcon").style.display = "block";
-    music.play(); // Start audio
-    musicIcon.innerHTML = pauseSVG; // Show pause icon
-  }, 1000);// Matches the CSS transition time (1s)
-  
+  function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
   }
 
-setTimeout(() => {
-  const guide = document.getElementById('scrollGuide');
-  if (guide) guide.style.display = 'none';
-}, 4000); // hides after 4 seconds
+  async function loadWishes() {
+    wishesList.innerHTML = '';
+    const snapshot = await db.collection('wishes').orderBy('timestamp', 'desc').get();
+    snapshot.forEach(doc => {
+      const data = doc.data();
+      const div = document.createElement('div');
+      div.className = 'wish';
+      div.innerHTML = `
+        <strong>${escapeHtml(data.name)}</strong>
+        <p>${escapeHtml(data.wish)}</p>
+      `;
+      wishesList.appendChild(div);
+    });
+  }
 
- const targetDate = new Date("2025-10-04T00:00:00+08:00"); // Your wedding date (Malaysia time)
+  submitBtn.addEventListener('click', async () => {
+    const name = nameInput.value.trim();
+    const wish = wishInput.value.trim();
 
+    if (!name || !wish) {
+      alert('Please fill in both fields!');
+      return;
+    }
+
+    await db.collection('wishes').add({
+      name,
+      wish,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    });
+
+    nameInput.value = '';
+    wishInput.value = '';
+    loadWishes();
+  });
+
+  loadWishes();
+
+  // Countdown Timer
+  const targetDate = new Date("2025-10-04T00:00:00+08:00");
   function updateCountdown() {
     const now = new Date();
-    let diff = targetDate - now;
+    const diff = targetDate - now;
 
     if (diff <= 0) {
       document.getElementById("countdown-container").innerHTML = "<p>Majlis telah bermula!</p>";
@@ -1851,8 +1799,6 @@ setTimeout(() => {
     const minutes = Math.floor((totalSeconds / 60) % 60);
     const hours = Math.floor((totalSeconds / 3600) % 24);
     const daysLeft = Math.floor(totalSeconds / (3600 * 24));
-
-    // Estimate months (not exact)
     const months = Math.floor(daysLeft / 30);
     const days = daysLeft % 30;
 
@@ -1863,12 +1809,40 @@ setTimeout(() => {
     document.getElementById("seconds").textContent = totalSeconds % 60;
   }
 
-  // Update immediately and every second
   updateCountdown();
   setInterval(updateCountdown, 1000);
-      
-  </script>
 
+  // openGate function
+  window.openGate = function () {
+    document.getElementById('leftDoor').style.transform = 'translateX(-100%)';
+    document.getElementById('rightDoor').style.transform = 'translateX(100%)';
+    document.getElementById('invitation').style.opacity = 1;
+    document.getElementById('gateText').style.display = "block";
+
+    const gateText = document.getElementById('gateText');
+    gateText.classList.add('fade-out');
+    setTimeout(() => {
+      gateText.style.display = "none";
+    }, 1000);
+
+    document.getElementById("waxFull").classList.add("fade-out-down");
+
+    const music = document.getElementById("music");
+    const musicIcon = document.getElementById("musicIcon");
+    const pauseSVG = '<svg>...</svg>'; // your actual SVG
+
+    music.play();
+    musicIcon.innerHTML = pauseSVG;
+    musicIcon.style.display = "block";
+  };
+
+  // Hide scroll guide
+  setTimeout(() => {
+    const guide = document.getElementById('scrollGuide');
+    if (guide) guide.style.display = 'none';
+  }, 4000);
+});
+</script>
 
 
 
