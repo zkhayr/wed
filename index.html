@@ -95,7 +95,7 @@
   animation-delay: 1s;
   animation-timing-function: ease-in-out;
 }
-    .wish {
+  /*  .wish {
       background: #fff8fc;
       border-left: 5px solid #f48fb1;
       margin: 1rem 0;
@@ -128,7 +128,74 @@
       margin-top: 1rem;
       gap: 1rem;
     }
+*/
 
+.wish-box {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #ffffffea;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .wish-box h2 {
+    font-size: 1.4em;
+    margin-bottom: 16px;
+    text-align: center;
+    color: #444;
+  }
+
+  .wish-box input,
+  .wish-box textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+  }
+
+  .wish-box button {
+    background-color: #f48fb1;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    font-size: 1em;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+
+  .wish-box button:hover {
+    background-color: #ec407a;
+  }
+
+  #wishesList .wish {
+    background-color: #fdfdfd;
+    border-left: 4px solid #f48fb1;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+  }
+
+  #wishesList .wish strong {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+  }
+
+  #wishesList .wish p {
+    margin: 0;
+    color: #555;
+  }
+
+
+        
 #qrContainer {
       margin-top: 3rem;
       padding: 1.5rem;
@@ -957,9 +1024,10 @@
 
 <div data-aos="fade-down" data-aos-delay="0" data-aos-duration="1000">
     <h2 class="mb-3">Tinggalkan ucapan untuk pasangan pengantin</h2>
-            <input type="text" id="name" placeholder="Your Name" /><br>
-                <textarea id="wish" placeholder="Your Wish..." rows="3"></textarea><br>
-                    <button id="submitWish">Hantar Ucapan</button>
+             <input type="text" id="name" placeholder="Your name" />
+  <textarea id="wish" placeholder="Your wish" rows="3"></textarea>
+  <button id="submitWish">Hantar Ucapan</button>
+                 
 
   <!-- Wish List Display -->
   <div id="wishesList"></div>
@@ -1442,11 +1510,11 @@ document.getElementById('rsvpForm').addEventListener('submit', function(e) {
 </script>
     
 <!-- Firebase SDK -->
- <!-- ✅ Firebase SDKs -->
+ <!-- Firebase SDKs -->
   <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
 
-  <!-- ✅ Your Firebase JS code -->
+  <!-- Your Firebase JS code -->
   <script>
     window.addEventListener('DOMContentLoaded', () => {
 
