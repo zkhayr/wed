@@ -1437,18 +1437,19 @@ document.getElementById('rsvpForm').addEventListener('submit', function(e) {
 </script>
     
 <!-- Firebase SDK -->
-  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/11.10.0/firebase-analytics.js"></script>
 
   <script>
     // 🔧 Your Firebase Config
     const firebaseConfig = {
-        apiKey: "AIzaSyAyXoBcnGabIuKSaCjso_hA5CsCDqKnNek",
-      authDomain: "wedding-guestbook-2086a.firebaseapp.com",
-      projectId: "wedding-guestbook-2086a",
-      storageBucket: "wedding-guestbook-2086a.firebasestorage.app",
-      messagingSenderId: "54243617499",
-      appId: "1:54243617499:web:bde886a3be0540492dfafe"
+       apiKey: "AIzaSyAyXoBcnGabIuKSaCjso_hA5CsCDqKnNek",
+  authDomain: "wedding-guestbook-2086a.firebaseapp.com",
+  projectId: "wedding-guestbook-2086a",
+  storageBucket: "wedding-guestbook-2086a.firebasestorage.app",
+  messagingSenderId: "54243617499",
+  appId: "1:54243617499:web:bde886a3be0540492dfafe",
+  measurementId: "G-CW3N7JZ6NT"
     };
 
     firebase.initializeApp(firebaseConfig);
@@ -1753,62 +1754,7 @@ setTimeout(() => {
   if (guide) guide.style.display = 'none';
 }, 4000); // hides after 4 seconds
 
-const endDate = new Date("2025-10-04T00:00:00").getTime(); // 4 October 2025
 
-  function updateCountdown() {
-    const now = new Date().getTime();
-    let diff = endDate - now;
-
-    if (diff < 0) diff = 0;
-
-    const months = Math.floor(diff / (1000 * 60 * 60 * 24 * 30.44)); // average month
-    const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 30.44)) / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-    document.getElementById("months").textContent = months;
-    document.getElementById("days").textContent = days;
-    document.getElementById("hours").textContent = hours;
-    document.getElementById("minutes").textContent = minutes;
-    document.getElementById("seconds").textContent = seconds;
-  }
-
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
-
-
-      //music
-    const musicIcon = document.getElementById("musicIcon");
-const music = document.getElementById("weddingAudio");
-
-const playSVG = `
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-  <polygon points="5 3 19 12 5 21 5 3"></polygon>
-</svg>`;
-
-const pauseSVG = `
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-  <rect x="6" y="4" width="4" height="16"></rect>
-  <rect x="14" y="4" width="4" height="16"></rect>
-</svg>`;
-
-// Set initial state to paused (show play icon)
-musicIcon.innerHTML = playSVG;
-
-musicIcon.addEventListener("click", () => {
-  if (music.paused) {
-    music.play();
-    musicIcon.innerHTML = pauseSVG;
-  } else {
-    music.pause();
-    musicIcon.innerHTML = playSVG;
-  }
-});
-
-
-
-      
       
   </script>
 
