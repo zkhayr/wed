@@ -942,7 +942,7 @@
                             <p class="by">~ Halim ~</p>
                         </div>
                                                 </div>-->
-<div data-aos="fade-down" data-aos-delay="0" data-aos-duration="2000">
+<!--<div data-aos="fade-down" data-aos-delay="0" data-aos-duration="2000">
                 <div id="wishesContainer">
                      <h3>Doa dan ucapan daripada para tetamu</h3>
                     <div id="wishesList"></div>
@@ -953,14 +953,19 @@
                 <button id="nextPage">></button>
                 </div>
         </div>
-</div>
+</div>-->
 
 <div data-aos="fade-down" data-aos-delay="0" data-aos-duration="1000">
     <h2 class="mb-3">Tinggalkan ucapan untuk pasangan pengantin</h2>
             <input type="text" id="name" placeholder="Your Name" /><br>
                 <textarea id="wish" placeholder="Your Wish..." rows="3"></textarea><br>
                     <button id="submitWish">Hantar Ucapan</button>
+
+  <!-- Wish List Display -->
+  <div id="wishesList"></div>
+    
 </div>
+            
             
 
 
@@ -1455,9 +1460,62 @@ document.getElementById('rsvpForm').addEventListener('submit', function(e) {
         measurementId: "G-CW3N7JZ6NT"
       };
 
-      firebase.initializeApp(firebaseConfig);
-      const db = firebase.firestore();
+         firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
 
+    const nameInput = document.getElementById('name');
+    const wishInput = document.getElementById('wish');
+    const submitBtn = document.getElementById('submitWish');
+    const wishesList = document.getElementById('wishesList');
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    async function loadWishes() {
+      wishesList.innerHTML = '';
+      const snapshot = await db.collection('wishes').orderBy('timestamp', 'desc').get();
+      snapshot.forEach(doc => {
+        const data = doc.data();
+        const div = document.createElement('div');
+        div.className = 'wish';
+        div.innerHTML = `
+          <strong>${escapeHtml(data.name)}</strong>
+          <p>${escapeHtml(data.wish)}</p>
+        `;
+        wishesList.appendChild(div);
+      });
+    }
+
+    submitBtn.addEventListener('click', async () => {
+      const name = nameInput.value.trim();
+      const wish = wishInput.value.trim();
+
+      if (!name || !wish) {
+        alert('Please fill in both fields!');
+        return;
+      }
+
+      await db.collection('wishes').add({
+        name,
+        wish,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+      });
+
+      nameInput.value = '';
+      wishInput.value = '';
+      loadWishes();
+    });
+
+    // Initial load
+    loadWishes();
+  });
+
+        
+
+      /*---------------------------------------
       const nameInput = document.getElementById('name');
       const wishInput = document.getElementById('wish');
       const submitBtn = document.getElementById('submitWish');
@@ -1670,7 +1728,15 @@ function cancelReservation(id) {
   }
 }
        }); // END DOMContentLoaded   
-      
+       -----------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+        
 function openGate() {
 
 
