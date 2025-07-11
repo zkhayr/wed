@@ -1836,7 +1836,36 @@ setTimeout(() => {
   if (guide) guide.style.display = 'none';
 }, 4000); // hides after 4 seconds
 
+ const targetDate = new Date("2025-10-04T00:00:00+08:00"); // Your wedding date (Malaysia time)
 
+  function updateCountdown() {
+    const now = new Date();
+    let diff = targetDate - now;
+
+    if (diff <= 0) {
+      document.getElementById("countdown-container").innerHTML = "<p>Majlis telah bermula!</p>";
+      return;
+    }
+
+    const totalSeconds = Math.floor(diff / 1000);
+    const minutes = Math.floor((totalSeconds / 60) % 60);
+    const hours = Math.floor((totalSeconds / 3600) % 24);
+    const daysLeft = Math.floor(totalSeconds / (3600 * 24));
+
+    // Estimate months (not exact)
+    const months = Math.floor(daysLeft / 30);
+    const days = daysLeft % 30;
+
+    document.getElementById("months").textContent = months;
+    document.getElementById("days").textContent = days;
+    document.getElementById("hours").textContent = hours;
+    document.getElementById("minutes").textContent = minutes;
+    document.getElementById("seconds").textContent = totalSeconds % 60;
+  }
+
+  // Update immediately and every second
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
       
   </script>
 
