@@ -1986,7 +1986,29 @@ function cancelReservation(id) {
   }
 }
       window.cancelReservation = cancelReservation;  
-  // Countdown Timer
+  
+      //QR  
+    function downloadQR() {
+      const qr = document.getElementById('qrImage');
+      const link = document.createElement('a');
+      link.href = qr.src;
+      link.download = 'yanaqr.jpeg';//kena ubah
+      link.click();
+    }
+
+    function copyAccount() {
+      const accNum = document.getElementById('accNum').textContent;
+      navigator.clipboard.writeText(accNum).then(() => {
+        alert("Nombor akaun telah disalin!\nBank account number has been copied!");
+      }).catch(err => {
+        alert("Gagal salin nombor akaun.\nFailed to copy account number.");
+      });
+     
+        
+        
+        
+        
+        // Countdown Timer
   const targetDate = new Date("2025-10-04T00:00:00+08:00");
   function updateCountdown() {
     const now = new Date();
@@ -2043,25 +2065,10 @@ function cancelReservation(id) {
     const guide = document.getElementById('scrollGuide');
     if (guide) guide.style.display = 'none';
   }, 4000);
-
-
-  function downloadQR() {
-      const qr = document.getElementById('qrImage');
-      const link = document.createElement('a');
-      link.href = qr.src;
-      link.download = 'yanaqr.jpeg';//kena ubah
-      link.click();
-    }
-
-    function copyAccount() {
-      const accNum = document.getElementById('accNum').textContent;
-      navigator.clipboard.writeText(accNum).then(() => {
-        alert("Nombor akaun telah disalin!\nBank account number has been copied!");
-      }).catch(err => {
-        alert("Gagal salin nombor akaun.\nFailed to copy account number.");
-      });
 });
 
+
+ 
       
 </script>
 
