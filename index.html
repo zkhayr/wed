@@ -1877,6 +1877,7 @@ document.getElementById('wishesBox').scrollTop = document.getElementById('wishes
             const data = doc.data();
             const li = document.createElement('li');
             li.innerHTML = `
+            <strong>${data.item}</strong><br>
               ${data.image && data.link
                 ? `<div class="wishlist-image-container">
         <a href="${data.link}" target="_blank">
@@ -1902,7 +1903,7 @@ document.getElementById('wishesBox').scrollTop = document.getElementById('wishes
       }
 
       window.loadWishlist = loadWishlist;
-      window.reserveItem = function(id, itemName) {
+     /* window.reserveItem = function(id, itemName) {
         const name = prompt(`Enter your name to reserve "${itemName}"`);
         if (name) {
           db.collection('wishlists').doc(id).update({
@@ -1913,7 +1914,7 @@ document.getElementById('wishesBox').scrollTop = document.getElementById('wishes
             loadWishlist();
           });
         }
-      }
+      }*/
 
       loadWishlist();
 
