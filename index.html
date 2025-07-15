@@ -1913,6 +1913,10 @@ document.getElementById('wishesBox').scrollTop = document.getElementById('wishes
         alert("Note: Your name will be recorded upon reservation. Once closed or refreshed, cancellations will no longer be available.");
         const name = prompt(`Enter your name to reserve "${itemName}"`);
         if (name) {
+            console.log("Saving to Firestore:", {
+      reservedBy: name,
+      reservedClientId: clientId
+            });
           db.collection('wishlists').doc(id).update({
             reservedBy: name,
             reservedClientId: clientId
