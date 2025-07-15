@@ -1873,12 +1873,27 @@ document.getElementById('wishesBox').scrollTop = document.getElementById('wishes
             const data = doc.data();
             const li = document.createElement('li');
             li.innerHTML = `
-              <strong>${data.item}</strong><br>
-              ${data.image ? `<img src="${data.image}" style="max-width: 200px;">` : ''}
-              ${data.reservedBy
-                ? `<br><em>Reserved by ${data.reservedBy}</em>`
-                : `<br><button onclick="reserveItem('${doc.id}', '${data.item}')">Reserve this item</button>`}
-            `;
+              ${data.image && data.link
+            ? <div class="wishlist-image-container">
+                <a href="${data.link}" target="_blank">
+                <img src="${data.image}" class="wishlist-image" style="max-width: 200px; margin-top: 8px; border-radius: 8px;">
+               
+               <span class="click-overlay">View Item</span></a>
+               </div>
+               <br>
+            : data.image
+              ? <img src="${data.image}" style="max-width: 200px; margin-top: 8px; border-radius: 4px;"><br>
+              : ""}
+          ${data.reservedBy 
+            ? <em>Reserved by ${data.reservedBy}</em><br>
+               ${(data.reservedClientId === clientId || data.reservedBy === localStorage.getItem('myReservationName')) 
+                  ? <button onclick="cancelReservation('${doc.id}')" style="margin-top: 8px;">Cancel Reservation</button> 
+                  : ''}
+            : 
+       <button onclick="reserveItem('${doc.id}', '${data.item}')" style="margin-top: 10px;">Gift this item</button>
+          }
+        `;
+              
             wishlistItems.appendChild(li);
           });
         });
