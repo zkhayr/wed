@@ -1875,6 +1875,52 @@ document.getElementById('wishesBox').scrollTop = document.getElementById('wishes
     if (guide) guide.style.display = 'none';
   }, 4000);
 });
+
+      //RSVP
+
+ document.getElementById('submitRSVP').addEventListener('click', async () => {
+        const name = rsvpNameInput.value.trim();
+        const attending = rsvpAttendanceInput.value;
+        const pax = parseInt(paxInput.value);
+        const note = rsvpNoteInput.value.trim();
+
+        if (!name || !attending) return alert('Please enter your name and attendance status.');
+        if (attending === 'yes' && (isNaN(pax) || pax < 1 || pax > 3)) {
+          return alert('Please enter a valid number of pax (1 to 3).');
+        }
+
+        await db.collection('rsvps').add({
+          name,
+          attending,
+          pax: attending === 'yes' ? pax : 0,
+          note,
+          timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        });
+
+        const successMsg = document.getElementById('rsvpSuccess');
+        successMsg.classList.add('show');
+
+        setTimeout(() => {
+          successMsg.classList.remove('show');
+        }, 5000);
+
+        rsvpNameInput.value = '';
+        rsvpAttendanceInput.value = '';
+        paxInput.value = '';
+        rsvpNoteInput.value = '';
+      });
+
+      rsvpAttendanceInput.addEventListener('change', () => {
+        if (rsvpAttendanceInput.value === 'yes') {
+          paxInput.style.display = 'block';
+        } else {
+          paxInput.style.display = 'none';
+          paxInput.value = '';
+        }
+      });
+
+
+      
 </script>
 
 
