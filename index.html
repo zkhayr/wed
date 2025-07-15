@@ -1909,7 +1909,8 @@ document.getElementById('wishesBox').scrollTop = document.getElementById('wishes
       }
 
       window.loadWishlist = loadWishlist;
-    /* window.reserveItem = function(id, itemName) {
+    window.reserveItem = function(id, itemName) {
+        alert("Note: Your name will be recorded upon reservation. Once closed or refreshed, cancellations will no longer be available.");
         const name = prompt(`Enter your name to reserve "${itemName}"`);
         if (name) {
           db.collection('wishlists').doc(id).update({
@@ -1922,7 +1923,7 @@ document.getElementById('wishesBox').scrollTop = document.getElementById('wishes
         }
       }
 
-      loadWishlist();*/
+      loadWishlist();
 
 
 
@@ -1930,7 +1931,7 @@ document.getElementById('wishesBox').scrollTop = document.getElementById('wishes
 
       
 
-  function reserveItem(id, itemName) {
+  /*function reserveItem(id, itemName) {
     alert("Note: Your name will be recorded upon reservation. Once closed or refreshed, cancellations will no longer be available.");
       
     const name = prompt(`Enter your name to reserve "${itemName}"`);
@@ -1948,7 +1949,7 @@ document.getElementById('wishesBox').scrollTop = document.getElementById('wishes
         loadWishlist();
       });
     }
-  }
+  }*/
 function cancelReservation(id) {
   if (confirm("Are you sure you want to cancel this reservation?")) {
     db.collection('wishlists').doc(id).update({
