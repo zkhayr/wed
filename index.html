@@ -1775,7 +1775,8 @@ function cancelReservation(id) {
   const rsvpNameInput = document.getElementById('rsvpName');
   const rsvpAttendanceInput = document.getElementById('rsvpAttendance');
   const paxInput = document.getElementById('rsvpPax');
-  const rsvpNoteInput = document.getElementById('rsvpNote');       
+  const rsvpNoteInput = document.getElementById('rsvpNote');
+  const wishlistItems = document.getElementById('wishlistItems');      
 
   function escapeHtml(text) {
     const div = document.createElement('div');
@@ -1864,7 +1865,80 @@ document.getElementById('wishesBox').scrollTop = document.getElementById('wishes
         }
       });
 
+//wishlist
+      function loadWishlist() {
+        db.collection('wishlists').get().then(snapshot => {
+          wishlistItems.innerHTML = '';
+          snapshot.forEach(doc => {
+            const data = doc.data();
+            const li = document.createElement('li');
+            li.innerHTML = `
+              <strong>${data.item}</strong><br>
+              ${data.image ? `<img src="${data.image}" style="max-width: 200px;">` : ''}
+              ${data.reservedBy
+                ? `<em>Reserved by ${data.reservedBy}</em>`
+                : `<button onclick="reserveItem('${doc.id}', '${data.item}')">Reserve this item</button>`}
+            `;
+            wishlistItems.appendChild(li);
+          });
+        });
+      }
 
+      window.loadWishlist = loadWishlist;
+      window.reserveItem = function(id, itemName) {
+        const name = prompt(`Enter your name to reserve "${itemName}"`);
+        if (name) {
+          db.collection('wishlists').doc(id).update({
+            reservedBy: name,
+            reservedClientId: clientId
+          }).then(() => {
+            alert("Item reserved!");
+            loadWishlist();
+          });
+        }
+      }
+
+      loadWishlist();
+
+
+
+
+
+      
+
+  function reserveItem(id, itemName) {
+    alert("Note: Your name will be recorded upon reservation. Once closed or refreshed, cancellations will no longer be available.");
+      
+    const name = prompt(`Enter your name to reserve "${itemName}"`);
+    if (name) {
+
+    console.log("Saving to Firestore:", {
+      reservedBy: name,
+      reservedClientId: clientId
+    });
+      db.collection('wishlists').doc(id).update({ 
+        reservedBy: name, 
+        reservedClientId: clientId 
+      }).then(() => {
+        alert("Item reserved!");
+        loadWishlist();
+      });
+    }
+  }
+function cancelReservation(id) {
+  if (confirm("Are you sure you want to cancel this reservation?")) {
+    db.collection('wishlists').doc(id).update({
+      reservedBy: "",
+      reservedClientId: ""
+    }).then(() => {
+      alert("Reservation cancelled.");
+      loadWishlist(); // refreshes the UI
+    }).catch((error) => {
+      console.error("Error cancelling reservation:", error);
+    });
+  }
+}
+       }); // END DOMContentLoaded      
 
         
   // Countdown Timer
