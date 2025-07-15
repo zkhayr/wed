@@ -1876,8 +1876,8 @@ document.getElementById('wishesBox').scrollTop = document.getElementById('wishes
               <strong>${data.item}</strong><br>
               ${data.image ? `<img src="${data.image}" style="max-width: 200px;">` : ''}
               ${data.reservedBy
-                ? `<em>Reserved by ${data.reservedBy}</em>`
-                : `<button onclick="reserveItem('${doc.id}', '${data.item}')">Reserve this item</button>`}
+                ? `<br><em>Reserved by ${data.reservedBy}</em>`
+                : `<br><button onclick="reserveItem('${doc.id}', '${data.item}')">Reserve this item</button>`}
             `;
             wishlistItems.appendChild(li);
           });
