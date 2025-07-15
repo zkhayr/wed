@@ -1234,23 +1234,23 @@ Amin Ya Rabbal Alamin.</p>
                                                         <li>
                                     <label><i class="fa fa-user-circle me-2"></i>Khairol Azmi (Ayah)</label>
                                     <a href="tel:+60133427570"><span class="fa fa-phone"></span></a>
-                                    <a href="https://wa.me/0133427570" target="_blank"><span class="fab fa-whatsapp"></span></a>
+                                    <a href="https://wa.me/+60133427570" target="_blank"><span class="fab fa-whatsapp"></span></a>
                                 </li>
                                                         <li>
                                     <label><i class="fa fa-user-circle me-2"></i>Zaleha (Ibu)</label>
                                     <a href="tel:+60193547970"><span class="fa fa-phone"></span></a>
-                                    <a href="https://wa.me/0193547970" target="_blank"><span class="fab fa-whatsapp"></span></a>
+                                    <a href="https://wa.me/+60193547970" target="_blank"><span class="fab fa-whatsapp"></span></a>
                                 </li>
                                                         <li>
                                     <label><i class="fa fa-user-circle me-2"></i>Khairol Zawanah (Adik)</label>
                                     <a href="tel:+60182247970"><span class="fa fa-phone"></span></a>
-                                    <a href="https://wa.me/0182247970" target="_blank"><span class="fab fa-whatsapp"></span></a>
+                                    <a href="https://wa.me/+60182247970" target="_blank"><span class="fab fa-whatsapp"></span></a>
                                 </li>
 
                                                         <li>
                                     <label><i class="fa fa-user-circle me-2"></i>Khairol Zahiera (Kakak)</label>
                                     <a href="tel:+60126155081"><span class="fa fa-phone"></span></a>
-                                    <a href="https://wa.me/0126155081" target="_blank"><span class="fab fa-whatsapp"></span></a>
+                                    <a href="https://wa.me/+60126155081" target="_blank"><span class="fab fa-whatsapp"></span></a>
                                 </li>
                                             </ul>
                     </div>
@@ -1391,11 +1391,11 @@ Amin Ya Rabbal Alamin.</p>
                                     <h3><em>Digital Wedding Gift</em></h3><p></p>
                                     <br>
                       Kehadiran keluarga dan sahabat sudah menjadi hadiah paling berharga buat kami.
-Bagi yang ingin berkongsi rezeki atau memberikan tanda ingatan; senarai hadiah, nombor akaun dan kod QR ada disediakan di sini untuk memudahkan semua.
+Bagi yang ingin berkongsi rezeki atau memberikan tanda ingatan; nombor akaun dan kod QR ada disediakan di sini untuk memudahkan semua.
 
 Terima kasih atas doa dan kasih sayang yang diberikan. <br>
                           <em>The presence of family and friends is already the most meaningful gift for us.
-For those who wish to share a token of love or blessing; a gift wishlist, account number and QR code are provided here for your convenience.
+For those who wish to share a token of love or blessing; account number and QR code are provided here for your convenience.
 
 Thank you for your prayers and kindness.</em>  <p></p> 
                     <!--<img id="qrImage" src="https://zkhayr.github.io/wed/asset/image/yanaqr.jpeg" alt="QR Duit Kahwin" width="60">-->
@@ -1424,7 +1424,7 @@ Thank you for your prayers and kindness.</em>  <p></p>
  
                                             <p></p>
                                             <p></p>
-                                    <section id="wishlistSection">
+                                   <!-- <section id="wishlistSection">
                                      <h2 style="margin-top: 20px;">Pesanan buat para tetamu</h2>
                                     <h3><em>A note for our guests</em></h3>
                                     Untuk sebarang maklumat lanjut seperti alamat penghantaran, butiran penerima, atau urusan berkaitan hadiah, anda dialu-alukan untuk terus menghubungi pengantin atau ahli keluarga terdekat mereka.<br>
@@ -1436,9 +1436,9 @@ Thank you for your prayers and kindness.</em>  <p></p>
                                     <h3><em>Gift Wishlist for the Couple</em></h3>
                                     
                                     <ul id="wishlistItems" class="wishlistItems" style="margin-top: 20px;">
-                                        <!-- Items will be loaded here -->
+                                        Items will be loaded here
                                           </ul>
-                              </section>
+                              </section>-->
                                     
                                 </div>
                             </div>
@@ -2043,10 +2043,24 @@ function cancelReservation(id) {
     const guide = document.getElementById('scrollGuide');
     if (guide) guide.style.display = 'none';
   }, 4000);
+
+
+  function downloadQR() {
+      const qr = document.getElementById('qrImage');
+      const link = document.createElement('a');
+      link.href = qr.src;
+      link.download = 'yanaqr.jpeg';//kena ubah
+      link.click();
+    }
+
+    function copyAccount() {
+      const accNum = document.getElementById('accNum').textContent;
+      navigator.clipboard.writeText(accNum).then(() => {
+        alert("Nombor akaun telah disalin!\nBank account number has been copied!");
+      }).catch(err => {
+        alert("Gagal salin nombor akaun.\nFailed to copy account number.");
+      });
 });
-
-  
-
 
       
 </script>
