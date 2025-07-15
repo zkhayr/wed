@@ -1788,6 +1788,14 @@ function cancelReservation(id) {
   const rsvpNoteInput = document.getElementById('rsvpNote');
   const wishlistItems = document.getElementById('wishlistItems');      
 
+let clientId = localStorage.getItem('clientId');
+      if (!clientId) {
+        clientId = 'client-' + Math.random().toString(36).substr(2, 9);
+        localStorage.setItem('clientId', clientId);
+      }
+
+
+        
   function escapeHtml(text) {
     const div = document.createElement('div');
     div.textContent = text;
