@@ -10,14 +10,14 @@
 
     100% {
         background-color: #FFFFFF;
-        color: #DB7093;
-        border: 1px solid #DB7093;
+        color: #1B1821;
+        border: 1px solid #1B1821;
     }
 }
 
 @-webkit-keyframe onplay {
     0% {
-        background-color: #DB7093;
+        background-color: #1B1821;
         color: #FFFFFF;
         border: 1px solid #FFFFFF;
     }
@@ -25,7 +25,7 @@
     100% {
         background-color: #FFFFFF;
         color: #DB7093;
-        border: 1px solid #DB7093;
+        border: 1px solid #1B1821;
     }
 }
 
@@ -130,7 +130,7 @@
 }
 
 .jsCalendar table tbody td.jsCalendar-current {
-    background-color: #DB7093;
+    background-color: #1B1821;
     border-radius: 8px;
     color: #FFFFFF;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
@@ -296,7 +296,7 @@ hr {
 }
 
 .text-hashtag {
-    color: #DB7093 !important;
+    color: #1B1821 !important;
     margin: 1em 0em;
     text-shadow: 0 1px 1px #1B1821;
 }
@@ -341,7 +341,7 @@ hr {
 .table-program tr td:nth-child(1) {
     font-family: SpaceMono;
     font-weight: 800;
-    color: #DB7093;
+    color: #1B1821;
     white-space: nowrap;
 }
 
@@ -415,7 +415,7 @@ hr {
 
 .card-divider {
     display: block;
-    border: 1px solid #DB7093;
+    border: 1px solid #1B1821;
     margin: 2em 0em;
 }
 
@@ -489,7 +489,7 @@ hr {
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 6px;
-    box-shadow: #DB7093 0px 1px 5px 0px;
+    box-shadow: #1B1821 0px 1px 5px 0px;
 }
 
 .slider-gallery-main .owl-stage-outer {
@@ -561,7 +561,7 @@ hr {
     width: 100%;
     height: 100%;
     background: #FFFFFF;
-    color: #DB7093;
+    color: #1B1821;
     text-align: center;
     overflow: hidden;
     transform: translateX(-50%);
@@ -851,7 +851,7 @@ hr {
     z-index: 999;
     width: 100%;
     font-family: Korbin;
-    color: #DB7093;
+    color: #1B1821;
     text-transform: uppercase;
     margin-bottom: 0px;
     padding: 1em 0em 1em 0em;
@@ -963,11 +963,11 @@ hr {
     max-width: 250px;
     font-size: 14px;
     padding: 0.75em 1em;
-    box-shadow: 0px 2px 4px 1px #DB7093;
+    box-shadow: 0px 2px 4px 1px #1B1821;
 }
 
 .sub-page {
-    color: #DB7093;
+    color: #1B1821;
     text-align: center;
     padding: 3em 0em 4em 0em;
 }
@@ -1092,12 +1092,12 @@ hr {
 }
 
 .sub-page .container h4 {
-    color: #DB7093;
+    color: #1B1821;
     font-weight: 600;
 }
 
 .sub-page .container.container-countdown {
-    background-color: #DB7093;
+    background-color: #1B1821;
     margin-bottom: 2em;
     padding: 2em 1.5em;
 }
@@ -1107,7 +1107,7 @@ hr {
 }
 
 .sub-page .container.container-footer {
-    background-color: #DB7093;
+    background-color: #1B1821;
     color: #FFFFFF;
 }
 
