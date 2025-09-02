@@ -2070,28 +2070,37 @@ function cancelReservation(id) {
         
         
         // Countdown Timer
-  const targetDate = new Date("2025-10-04T00:00:00+08:00");
+   const targetDate = new Date("2025-10-04T00:00:00+08:00");
+
   function updateCountdown() {
     const now = new Date();
-    const diff = targetDate - now;
+    let diff = targetDate - now;
 
     if (diff <= 0) {
       document.getElementById("countdown-container").innerHTML = "<p>Majlis telah bermula!</p>";
       return;
     }
 
-    const totalSeconds = Math.floor(diff / 1000);
-    const minutes = Math.floor((totalSeconds / 60) % 60);
-    const hours = Math.floor((totalSeconds / 3600) % 24);
-    const daysLeft = Math.floor(totalSeconds / (3600 * 24));
-    const months = Math.floor(daysLeft / 30);
-    const days = daysLeft % 30;
+    // kira bulan & hari ikut tarikh sebenar
+    let months = (targetDate.getFullYear() - now.getFullYear()) * 12 +
+                 (targetDate.getMonth() - now.getMonth());
+    let days = targetDate.getDate() - now.getDate();
+
+    if (days < 0) {
+      months--;
+      const prevMonthDays = new Date(targetDate.getFullYear(), targetDate.getMonth(), 0).getDate();
+      days += prevMonthDays;
+    }
+
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
 
     document.getElementById("months").textContent = months;
     document.getElementById("days").textContent = days;
     document.getElementById("hours").textContent = hours;
     document.getElementById("minutes").textContent = minutes;
-    document.getElementById("seconds").textContent = totalSeconds % 60;
+    document.getElementById("seconds").textContent = seconds;
   }
 
   updateCountdown();
@@ -2138,6 +2147,7 @@ function cancelReservation(id) {
 </body>
 
 </html>
+
 
 
 
