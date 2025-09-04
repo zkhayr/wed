@@ -566,7 +566,7 @@
 
 .countdown-box {
   display: flex;
-  gap: 8px;
+  gap: 12px;
   text-align: center;
   flex-wrap: wrap;
   justify-content: center;
@@ -582,7 +582,7 @@
 
 .countdown-box span {
   display: block;
-  font-size: 1.0rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: #333;
 }
@@ -1014,10 +1014,10 @@
 
 <div id="countdown-container">
   <div class="countdown-box">
-    <div><span id="days">0</span><small>Days / Hari</small></div>
-    <div><span id="hours">0</span><small>Hours / Jam</small></div>
-    <div><span id="minutes">0</span><small>Mins / Minit</small></div>
-    <div><span id="seconds">0</span><small>Secs / Saat</small></div>
+    <div><span id="days">0</span><small>Hari</small></div>
+    <div><span id="hours">0</span><small>Jam</small></div>
+    <div><span id="minutes">0</span><small>Minit</small></div>
+    <div><span id="seconds">0</span><small>Saat</small></div>
   </div>
 </div>
 
@@ -1402,14 +1402,14 @@ Amin Ya Rabbal Alamin."</p>
       
                                     <div id="rsvpSection">
                                             Tuan/Puan dijemput untuk melengkapkan borang RSVP di bawah bagi mengesahkan kehadiran Tuan/Puan ke majlis sebelum 2 Oktober 2025<p></p>  
-                                             <input type="text" id="rsvpName" placeholder="Your Name" />
+                                             <input type="text" id="rsvpName" placeholder="Nama anda" />
                                               <select id="rsvpAttendance">
                                                     <option value="">Sahkan kehadiran anda</option>
                                                     <option value="yes">Hadir</option>
                                                     <option value="no">Tidak Hadir</option>
                                               </select>
-                                            <input type="number" id="rsvpPax" min="1" max="3" placeholder="No. of Pax (max 3)" />
-                                            <textarea id="rsvpNote" placeholder="Any message (optional)"></textarea>
+                                            <input type="number" id="rsvpPax" min="1" max="3" placeholder="Bilangan yang hadir" />
+                                            <textarea id="rsvpNote" placeholder="Mesej Tambahan (Jika ada)"></textarea>
       <!--<button id="submitRSVP">Submit RSVP</button>-->
                                             <div id="rsvpSuccess" style="color: green; margin-top: 5px;">
                                               Terima kasih di atas pengesahan kehadiran anda!
@@ -1435,7 +1435,7 @@ Amin Ya Rabbal Alamin."</p>
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">GIFT</h5>
+                    <h5 class="modal-title">HADIAH</h5>
                     <button type="button" class="btn-close btn-close-white" data-modal-action="close"></button>
                 </div>
                 <div class="modal-body" style="max-height: 70vh; overflow-y: auto; -webkit-overflow-scrolling: touch;">
@@ -1915,9 +1915,9 @@ document.getElementById('wishesBox').scrollTop = document.getElementById('wishes
         const pax = parseInt(paxInput.value);
         const note = rsvpNoteInput.value.trim();
 
-        if (!name || !attending) return alert('Please enter your name and attendance status.');
+        if (!name || !attending) return alert('Sila isi nama anda and status kehadiran.');
         if (attending === 'yes' && (isNaN(pax) || pax < 1 || pax > 3)) {
-          return alert('Please enter a valid number of pax (1 to 3).');
+          return alert('Sila masukkan bilangan pax(1-3).');
         }
 
         await db.collection('rsvps').add({
@@ -2132,6 +2132,7 @@ function cancelReservation(id) {
 </body>
 
 </html>
+
 
 
 
