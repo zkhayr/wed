@@ -1014,7 +1014,6 @@
 
 <div id="countdown-container">
   <div class="countdown-box">
-    <div><span id="months">0</span><small>Months / Bulan</small></div>
     <div><span id="days">0</span><small>Days / Hari</small></div>
     <div><span id="hours">0</span><small>Hours / Jam</small></div>
     <div><span id="minutes">0</span><small>Mins / Minit</small></div>
@@ -2067,7 +2066,7 @@ function cancelReservation(id) {
         
         
         // Countdown Timer
-   const targetDate = new Date("2025-10-04T00:00:00+08:00");
+ const targetDate = new Date("2025-10-04T00:00:00+08:00");
 
   function updateCountdown() {
     const now = new Date();
@@ -2078,22 +2077,11 @@ function cancelReservation(id) {
       return;
     }
 
-    // kira bulan & hari ikut tarikh sebenar
-    let months = (targetDate.getFullYear() - now.getFullYear()) * 12 +
-                 (targetDate.getMonth() - now.getMonth());
-    let days = targetDate.getDate() - now.getDate();
-
-    if (days < 0) {
-      months--;
-      const prevMonthDays = new Date(targetDate.getFullYear(), targetDate.getMonth(), 0).getDate();
-      days += prevMonthDays;
-    }
-
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
     const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
     const minutes = Math.floor((diff / (1000 * 60)) % 60);
     const seconds = Math.floor((diff / 1000) % 60);
 
-    document.getElementById("months").textContent = months;
     document.getElementById("days").textContent = days;
     document.getElementById("hours").textContent = hours;
     document.getElementById("minutes").textContent = minutes;
@@ -2144,6 +2132,7 @@ function cancelReservation(id) {
 </body>
 
 </html>
+
 
 
 
