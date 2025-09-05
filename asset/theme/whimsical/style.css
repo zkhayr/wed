@@ -167,10 +167,6 @@
     src: url("../../../assets/fonts/Korbin/Korbin\ W01\ Book.ttf");
 }
 
-@font-face {
-    font-family: Cynthia;
-    src: url("../../../assets/fonts/Cynthia/CynthiaJuneJF.ttf");
-}
 
 
 
@@ -196,7 +192,11 @@
 
 @font-face {
     font-family: Merietta;
-    src: url("../../../../assets/fonts/Meritta/Merietta.ttf");
+    src: url("../../../../asset/font/Meritta/Merietta.ttf");
+}
+@font-face {
+    font-family: Cynthia;
+    src: url("../../../../asset/font/Cynthia/Cynthia.ttf");
 }
 
 
@@ -291,7 +291,7 @@ hr {
 }
 
 .text-bride {
-    font-family: Baihgale;
+    font-family: Cynthia;
     font-size: 32px;
     font-weight: 400 !important;
     letter-spacing: 1px;
