@@ -1029,8 +1029,8 @@ hr {
     position: absolute;
     bottom: -1%;
     right: -70%;
-    width: 105%;
-    height: 80%;
+    width: 70%;
+    height: 50%;
     background-image: url(el1.webp);
     background-size: contain;
     background-position: center;
@@ -1044,7 +1044,7 @@ hr {
 .sub-page .sub-right-2 .el {
     position: absolute;
     bottom: -1%;
-    left: -70%;
+    left: -60%;
     width: 105%;
     height: 70%;
     background-image: url(el4.webp);
@@ -1060,7 +1060,7 @@ hr {
     position: absolute;
     bottom: -16%;
     right: -14%;
-    width: 80%;
+    width: 90%;
     height: 50%;
     background-image: url(el4.webp);
     background-size: contain;
