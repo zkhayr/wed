@@ -2028,7 +2028,7 @@ document.getElementById('wishesBox').scrollTop = document.getElementById('wishes
         loadWishlist();
       });
     }
-  }*/
+  }
 function cancelReservation(id) {
   if (confirm("Are you sure you want to cancel this reservation?")) {
     db.collection('wishlists').doc(id).update({
@@ -2043,15 +2043,11 @@ function cancelReservation(id) {
   }
 }
       window.cancelReservation = cancelReservation;  
-  
+  */
+
+        
      //QR  
-    function downloadQR() {
-      const qr = document.getElementById('qrImage');
-      const link = document.createElement('a');
-      link.href = qr.src;
-      link.download = 'yanaTNG.jpeg';//kena ubah
-      link.click();
-    }
+    
 
     function copyAccount() {
       const accNum = document.getElementById('accNum').textContent;
@@ -2062,6 +2058,13 @@ function cancelReservation(id) {
       });
     
     } 
+        function downloadQR() {
+      const qr = document.getElementById('qrImage');
+      const link = document.createElement('a');
+      link.href = qr.src;
+      link.download = 'yanaTNG.jpeg';//kena ubah
+      link.click();
+    }
         
         
         
@@ -2132,6 +2135,7 @@ function cancelReservation(id) {
 </body>
 
 </html>
+
 
 
 
