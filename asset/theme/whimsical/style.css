@@ -1245,14 +1245,19 @@ hr {
 }
 
 .floating-bar .floating-music {
-    position: fixed;
-    bottom: 100px;
-    background: #1B1821;
-    font-size: 20px;
-    color: #FFFFFF;
-    border: 1px solid #FFFFFF;
-    border-radius: 50%;
-    justify-content: center;
+     position: fixed;
+  bottom: 100px;
+  right: 20px;              /* letak kanan bawah */
+  background: #1B1821;
+  font-size: 20px;
+  color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  border-radius: 50%;
+  width: 60px;              /* tinggi sama dengan lebar */
+  height: 60px;
+  display: flex;            /* flexbox untuk centerkan */
+  align-items: center;
+  justify-content: center;
 }
 
 .floating-bar .floating-music.active {
