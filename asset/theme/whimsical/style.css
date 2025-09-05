@@ -189,7 +189,7 @@
 
 @font-face {
     font-family: Priestacy;
-    src: url("../asset/font/Priestacy.otf");
+    src: url("asset/font/Priestacy.otf") format("opentype");
 }
 
 
