@@ -191,8 +191,8 @@
 }
 
 @font-face {
-    font-family: Merietta;
-    src: url("../../../../asset/font/Merietta.ttf");
+    font-family: Marietta;
+    src: url("../../../../asset/font/Marietta.ttf");
 }
 @font-face {
     font-family: Cynthia;
@@ -291,7 +291,7 @@ hr {
 }
 
 .text-bride {
-    font-family: Cynthia;
+    font-family: Baihgale;
     font-size: 32px;
     font-weight: 400 !important;
     letter-spacing: 1px;
