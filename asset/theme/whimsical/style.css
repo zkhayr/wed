@@ -1043,8 +1043,8 @@ hr {
 
 .sub-page .sub-right-2 .el {
     position: absolute;
-    bottom: 0%;
-    right: 0%;
+    bottom: -1%;
+    left: -70%;
     width: 105%;
     height: 70%;
     background-image: url(el4.webp);
