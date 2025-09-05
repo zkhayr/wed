@@ -1914,13 +1914,14 @@ document.getElementById('wishesBox').scrollTop = document.getElementById('wishes
     
 
   function copyAccount() {
-  const accNum = document.getElementById('accNum').textContent;
-  navigator.clipboard.writeText(accNum).then(() => {
-    alert("Nombor akaun telah disalin!");
-  }).catch(err => {
-    console.error("Clipboard error:", err);
-    alert("Gagal salin nombor akaun.");
-  });
+  const accNum = document.getElementById('accNum').textContent.trim();
+  navigator.clipboard.writeText(accNum)
+    .then(() => {
+      alert("Nombor akaun telah disalin!");
+    })
+    .catch(() => {
+      alert("Gagal salin nombor akaun.");
+    });
 }
 
 function downloadQR() {
@@ -2143,6 +2144,7 @@ function cancelReservation(id) {
 </body>
 
 </html>
+
 
 
 
