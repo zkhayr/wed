@@ -292,7 +292,7 @@ hr {
 
 .text-bride {
     font-family: Typography;
-    font-size: 25px;
+    font-size: 22px;
     font-weight: 400 !important;
     letter-spacing: 1px;
     color: #1B1821 !important;
@@ -306,7 +306,7 @@ hr {
 }
 
 .text-bride span::first-letter {
-    font-size: 38px !important;
+    font-size: 25px !important;
 }
 
 .text-hashtag {
