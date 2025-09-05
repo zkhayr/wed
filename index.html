@@ -1468,7 +1468,7 @@ Thank you for your prayers and kindness.</em>--> <p></p>
                                           <p class="account-number" id="accNum">120341935761</p>
                                 </div><br>
       
-                                   <a  class="btn btn-main w-100" onclick="copyAccount()" target="_blank"> <i class="fa fa-copy"></i> Copy </a>
+                                   <a  class="btn btn-main w-100" onclick="copyAccount()"> <i class="fa fa-copy"></i> Copy </a>
    
 
                                     <p></p>
@@ -1907,6 +1907,27 @@ let clientId = localStorage.getItem('clientId');
   loadWishes();
 document.getElementById('wishesBox').scrollTop = document.getElementById('wishesBox').scrollHeight;    
 
+
+   //QR  
+    
+
+    function copyAccount() {
+      const accNum = document.getElementById('accNum').textContent;
+      navigator.clipboard.writeText(accNum).then(() => {
+        alert("Nombor akaun telah disalin!");
+      }).catch(err => {
+        alert("Gagal salin nombor akaun.");
+      });
+    
+    } 
+        function downloadQR() {
+      const qr = document.getElementById('qrImage');
+      const link = document.createElement('a');
+      link.href = qr.src;
+      link.download = 'yanaTNG.jpeg';//kena ubah
+      link.click();
+    }
+        
     //RSVP
 
  document.getElementById('submitRSVP').addEventListener('click', async () => {
@@ -2046,25 +2067,9 @@ function cancelReservation(id) {
   */
 
         
-     //QR  
-    
+  
 
-    function copyAccount() {
-      const accNum = document.getElementById('accNum').textContent;
-      navigator.clipboard.writeText(accNum).then(() => {
-        alert("Nombor akaun telah disalin!");
-      }).catch(err => {
-        alert("Gagal salin nombor akaun.");
-      });
-    
-    } 
-        function downloadQR() {
-      const qr = document.getElementById('qrImage');
-      const link = document.createElement('a');
-      link.href = qr.src;
-      link.download = 'yanaTNG.jpeg';//kena ubah
-      link.click();
-    }
+
         
         
         
@@ -2135,6 +2140,7 @@ function cancelReservation(id) {
 </body>
 
 </html>
+
 
 
 
