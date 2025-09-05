@@ -172,10 +172,7 @@
     src: url("../../../assets/fonts/Cynthia/CynthiaJuneJF.ttf");
 }
 
-@font-face {
-    font-family: Meritta;
-    src: url("../../../assets/fonts/Meritta/MerittaSerif.ttf");
-}
+
 
 @font-face {
     font-family: Caveat;
@@ -188,14 +185,21 @@
 }
 
 @font-face {
-    font-family: Perfecto;
-    src: url("../../../../asset/font/PerfectoCalligraphy.ttf");
+    font-family: Baihgale;
+    src: url("../../../../asset/font/Baihgale.otf");
 }
 
 @font-face {
     font-family: Timernis;
     src: url("../../../../asset/font/fonnts.com-timernis-medium.otf");
 }
+
+@font-face {
+    font-family: Merietta;
+    src: url("../../../../assets/fonts/Meritta/Merietta.ttf");
+}
+
+
 
 /*============================================
 ==> General CSS
@@ -232,7 +236,7 @@ body {
     max-width: 480px;
     width: 100%;
     margin: auto;
-    font-family: Timernis;
+    font-family: Marietta;
     letter-spacing: 1px;
     color: #1B1821;
     background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("bg2.webp");
@@ -287,7 +291,7 @@ hr {
 }
 
 .text-bride {
-    font-family: Perfecto;
+    font-family: Baihgale;
     font-size: 32px;
     font-weight: 400 !important;
     letter-spacing: 1px;
