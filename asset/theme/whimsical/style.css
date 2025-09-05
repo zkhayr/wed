@@ -3,7 +3,7 @@
 ============================================*/
 @keyframes onplay {
     0% {
-        background-color: #d9d1e8;
+        background-color: #4f0d25;
         color: #FFFFFF;
         border: 1px solid #FFFFFF;
     }
@@ -57,7 +57,7 @@
 }
 
 .js-preloader .preloader-inner .dot {
-    background: #1B1821; 
+    background: #4f0d25; 
 }
 
 .js-preloader .preloader-inner .dots span {
@@ -107,7 +107,7 @@
 
 .jsCalendar thead .jsCalendar-nav-left:hover,
 .jsCalendar thead .jsCalendar-nav-right:hover {
-    background-color: #DB7093;
+    background-color: #4f0d25;
 }
 
 .jsCalendar thead .jsCalendar-title {
