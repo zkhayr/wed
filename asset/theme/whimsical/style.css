@@ -3,7 +3,7 @@
 ============================================*/
 @keyframes onplay {
     0% {
-        background-color: #4f0d25;
+        background-color: #e9ecef;
         color: #FFFFFF;
         border: 1px solid #FFFFFF;
     }
@@ -57,7 +57,7 @@
 }
 
 .js-preloader .preloader-inner .dot {
-    background: #4f0d25; 
+    background: #e9ecef; 
 }
 
 .js-preloader .preloader-inner .dots span {
