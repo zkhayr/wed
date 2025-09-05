@@ -2044,7 +2044,7 @@ function cancelReservation(id) {
 }
       window.cancelReservation = cancelReservation;  
   
-       
+     //QR  
     function downloadQR() {
       const qr = document.getElementById('qrImage');
       const link = document.createElement('a');
@@ -2056,12 +2056,12 @@ function cancelReservation(id) {
     function copyAccount() {
       const accNum = document.getElementById('accNum').textContent;
       navigator.clipboard.writeText(accNum).then(() => {
-        alert("Nombor akaun telah disalin!\nBank account number has been copied!");
+        alert("Nombor akaun telah disalin!");
       }).catch(err => {
-        alert("Gagal salin nombor akaun.\nFailed to copy account number.");
+        alert("Gagal salin nombor akaun.");
       });
     
-        
+    } 
         
         
         
@@ -2132,6 +2132,7 @@ function cancelReservation(id) {
 </body>
 
 </html>
+
 
 
 
