@@ -1060,8 +1060,8 @@ hr {
     position: absolute;
     bottom: -16%;
     right: -14%;
-    width: 115%;
-    height: 80%;
+    width: 80%;
+    height: 50%;
     background-image: url(el4.webp);
     background-size: contain;
     background-position: center;
@@ -1090,8 +1090,8 @@ hr {
     position: absolute;
     top: -28%;
     left: -62%;
-    width: 80%;
-    height: 50%;
+    width: 115%;
+    height: 80%;
     background-image: url(el1.webp);
     background-size: contain;
     background-position: center;
