@@ -1028,7 +1028,7 @@ hr {
 .sub-page .sub-right-3 .el {/*kanan tepi*/
     position: absolute;
     bottom: -1%;
-    right: -70%;
+    right: -60%;
     width: 115%;
     height: 80%;
     background-image: url(el1.webp);
