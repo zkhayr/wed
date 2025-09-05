@@ -1469,8 +1469,10 @@ Thank you for your prayers and kindness.</em>--> <p></p>
                                   Touch 'n Go eWallet</b>
                                           <p class="account-number" id="accNum">120341935761</p>
                                 </div><br>
-      
-                                   <a  class="btn btn-main w-100" onclick="copyAccount()"> <i class="fa fa-copy"></i> Salin </a>
+                              <button id="copyBtn" type="button" class="btn btn-main w-100">
+                                  <i class="fa fa-copy"></i> Salin
+                                    </button>
+                                   <!--<a  class="btn btn-main w-100" onclick="copyAccount()"> <i class="fa fa-copy"></i> Salin </a>-->
    
 
                                     <p></p>
@@ -1910,7 +1912,7 @@ let clientId = localStorage.getItem('clientId');
 document.getElementById('wishesBox').scrollTop = document.getElementById('wishesBox').scrollHeight;    
 
 
-   //QR  
+   /*QR  
     
 
   function copyAccount() {
@@ -1922,7 +1924,52 @@ document.getElementById('wishesBox').scrollTop = document.getElementById('wishes
     .catch(() => {
       alert("Gagal salin nombor akaun.");
     });
-}
+}*/
+const copyBtn = document.getElementById('copyBtn');
+
+  copyBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    const el = document.getElementById('accNum');
+    if (!el) { alert('Elemen nombor akaun tak jumpa.'); return; }
+
+    const text = (el.textContent || el.innerText || '').trim();
+    if (!text) { alert('Nombor akaun kosong.'); return; }
+
+    // Guna Clipboard API jika ada & dalam HTTPS
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text)
+        .then(() => alert('Nombor akaun telah disalin!'))
+        .catch((err) => {
+          console.error('Clipboard API error:', err);
+          fallbackCopyText(text);
+        });
+    } else {
+      // Fallback untuk browser lama / bukan HTTPS
+      fallbackCopyText(text);
+    }
+  });
+
+  function fallbackCopyText(text) {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed';
+    ta.style.top = '-9999px';
+    document.body.appendChild(ta);
+    ta.select();
+    ta.setSelectionRange(0, ta.value.length);
+    const ok = document.execCommand('copy');
+    document.body.removeChild(ta);
+    if (ok) {
+      alert('Nombor akaun telah disalin!');
+    } else {
+      alert('Gagal salin nombor akaun.');
+    }
+  }
+
+
+        
 
 function downloadQR() {
   const qr = document.getElementById('qrImage');
@@ -2144,6 +2191,7 @@ function cancelReservation(id) {
 </body>
 
 </html>
+
 
 
 
