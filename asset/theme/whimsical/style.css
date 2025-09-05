@@ -192,14 +192,17 @@
 
 @font-face {
     font-family: Crimson;
-    src: url("../../../../asset/font/Crimson-Semibold.ttf");
+    src: url("../../../../assets/font/Crimson-Semibold.ttf");
 }
 @font-face {
     font-family: Typography;
     src: url("../../../../asset/font/Typography.ttf");
 }
 
-
+@font-face {
+    font-family: Nimbus;
+    src: url("../../../../asset/font/NimbusReg.otf");
+}
 
 /*============================================
 ==> General CSS
@@ -236,7 +239,7 @@ body {
     max-width: 480px;
     width: 100%;
     margin: auto;
-    font-family: Crimson;
+    font-family: Nimbus;
     letter-spacing: 1px;
     color: #1B1821;
     background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("bg2.webp");
