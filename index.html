@@ -1478,13 +1478,19 @@ Thank you for your prayers and kindness.</em>--> <p></p>
 
                                     <p></p>
           
-     
-            
-                                   <a class="btn btn-main w-100" onclick="downloadQR()" style="cursor: pointer;">
+                             <!-- Button -->
+                                <button id="downloadBtn" type="button" class="btn btn-main w-100">
+                                  <i class="fa fa-download"></i> Muat Turun QR
+                                </button>
+
+                                    <!-- Gambar QR (hidden) -->
+                                    <img id="qrImage" src="https://zkhayr.github.io/wed/asset/image/yanaTNG.jpeg" alt="QR Duit Kahwin" width="200" style="display: none;">
+                                                
+                                   <!--<a class="btn btn-main w-100" onclick="downloadQR()" style="cursor: pointer;">
                                            <i class="fa fa-download"></i> Muat Turun QR</a> 
                                             <img id="qrImage" src="https://zkhayr.github.io/wed/asset/image/yanaTNG.jpeg" alt="QR Duit Kahwin" width="200" style="display: none;">
  
-                                            <p></p>
+                                            <p></p>-->
                                             <p></p>
                                    <!-- <section id="wishlistSection">
                                      <h2 style="margin-top: 20px;">Pesanan buat para tetamu</h2>
@@ -1970,16 +1976,19 @@ const copyBtn = document.getElementById('copyBtn');
   }
 
 
-        
+  document.getElementById("downloadBtn").addEventListener("click", function () {
+  if (confirm("Adakah anda mahu muat turun QR?")) {
+    const qrImg = document.getElementById("qrImage");  
+    const link = document.createElement("a");
+    link.href = qrImg.src;            // ambil URL gambar
+    link.download = "yanaTNG.jpeg";   // nama fail bila download
+    link.click();
+  } else {
+    alert("Muat turun dibatalkan.");
+  }
+});
 
-function downloadQR() {
-  const qr = document.getElementById('qrImage');
-  const link = document.createElement('a');
-  link.href = qr.src;
-  link.download = 'yanaTNG.jpeg';
-  link.click();
-}
-        
+   
     //RSVP
 
  document.getElementById('submitRSVP').addEventListener('click', async () => {
@@ -2192,6 +2201,7 @@ function cancelReservation(id) {
 </body>
 
 </html>
+
 
 
 
