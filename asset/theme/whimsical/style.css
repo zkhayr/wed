@@ -187,6 +187,11 @@
     src: url("../../../assets/fonts/SpaceMono/SpaceMono-Regular.ttf");
 }
 
+@font-face {
+    font-family: SpaceMono;
+    src: url("../asset/font/Priestacy.otf");
+}
+
 
 
 /*============================================
@@ -279,7 +284,7 @@ hr {
 }
 
 .text-bride {
-    font-family: Abraham Lincoln;
+    font-family: Priestacy;
     font-size: 24px;
     font-weight: 400 !important;
     letter-spacing: 1px;
