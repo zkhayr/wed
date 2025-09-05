@@ -24,7 +24,7 @@
 
     100% {
         background-color: #FFFFFF;
-        color: #DB7093;
+        color: #1B1821;
         border: 1px solid #1B1821;
     }
 }
@@ -57,7 +57,7 @@
 }
 
 .js-preloader .preloader-inner .dot {
-    background: #DB7093;
+    background: #1B1821; 
 }
 
 .js-preloader .preloader-inner .dots span {
