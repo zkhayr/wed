@@ -192,7 +192,10 @@
     src: url("../../../../asset/font/PerfectoCalligraphy.ttf");
 }
 
-
+@font-face {
+    font-family: Timernis;
+    src: url("../../../../asset/font/fonnts.com-timernis-medium.ttf");
+}
 
 /*============================================
 ==> General CSS
@@ -229,7 +232,7 @@ body {
     max-width: 480px;
     width: 100%;
     margin: auto;
-    font-family: Korbin;
+    font-family: Timernis;
     letter-spacing: 1px;
     color: #1B1821;
     background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("bg2.webp");
