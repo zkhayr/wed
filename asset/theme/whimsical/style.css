@@ -191,12 +191,12 @@
 }
 
 @font-face {
-    font-family: Marietta;
-    src: url("../../../../asset/font/Marietta.ttf");
+    font-family: Crimson;
+    src: url("../../../../asset/font/Crimson-Semibold.ttf");
 }
 @font-face {
-    font-family: Cynthia;
-    src: url("../../../../asset/font/Cynthia.ttf");
+    font-family: Typography;
+    src: url("../../../../asset/font/Typography.ttf");
 }
 
 
@@ -236,7 +236,7 @@ body {
     max-width: 480px;
     width: 100%;
     margin: auto;
-    font-family: Marietta;
+    font-family: Crimson;
     letter-spacing: 1px;
     color: #1B1821;
     background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("bg2.webp");
@@ -291,7 +291,7 @@ hr {
 }
 
 .text-bride {
-    font-family: Baihgale;
+    font-family: Typography;
     font-size: 32px;
     font-weight: 400 !important;
     letter-spacing: 1px;
